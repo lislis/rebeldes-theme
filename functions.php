@@ -139,6 +139,8 @@ add_action( 'widgets_init', 'rebeldes_widgets_init' );
  */
 function rebeldes_scripts() {
 	wp_enqueue_style( 'rebeldes-style', get_stylesheet_uri(), array(), _S_VERSION );
+        wp_enqueue_style( 'rebeldes-main-style', get_template_directory_uri() . '/main.css', array(), _S_VERSION );
+        
 	wp_style_add_data( 'rebeldes-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'rebeldes-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
@@ -151,7 +153,8 @@ add_action( 'wp_enqueue_scripts', 'rebeldes_scripts' );
 
 
 
-require get_template_directory() . '/post_types/artists.php';  
+require get_template_directory() . '/post_types/artists.php';
+  require get_template_directory() . '/post_types/curator.php';  
 
 
 add_action( 'after_switch_theme', 'flush_rewrite_rules' );
