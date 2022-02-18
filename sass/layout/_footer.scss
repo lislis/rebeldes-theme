@@ -1,0 +1,88 @@
+.site-footer {
+  padding-top: var(--s-60);
+  padding-bottom: var(--s-115);
+  color: var(--white);
+  background: var(--gradient2);
+
+  @media screen and (min-width: $bp-m) {
+    //padding-left: 8.35%;
+    //padding-right: 8.35%;
+    .layout-inner {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+
+    .site-totop {
+      width: 8.35%;
+      margin-left: 8.35%;
+      margin-right: 8.35%;
+    }
+    .widget-area {
+      width: 66.60%;
+      margin-right: 8.35%;
+    }
+  }
+
+  .footer-group-hor {
+    @media screen and (min-width: $bp-s) {
+      > div {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .footer-group-elem {
+        flex-basis: 25%;
+        padding: 0 var(--s-10);
+      }
+    }
+  }
+  .footer-group {
+    @media screen and (min-width: $bp-s) {
+      padding: 0 var(--s-10);
+    }
+  }
+
+  .footer-group-elem {
+    margin-bottom: var(--s-60);
+    @media screen and (min-width: $bp-s) {
+      margin-bottom: var(--s-40);
+    }
+  }
+
+  h1, h2, h3, h2 {
+    font-size: var(--h-s);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--s-20);
+    @media screen and (min-width: $bp-s) {
+      margin-bottom: var(--s-40);
+    }
+  }
+
+  p {
+    line-height: 1.5;
+    font-size: var(--r-xs);
+  }
+
+  figure {
+    img {
+      display: inline-block;
+      height: 57px;
+      width: auto;
+    }
+  }
+
+  .footer-logos {
+    .wp-block-group__inner-container{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    figure {
+      margin-right: var(--s-60);
+    }
+  }
+
+}

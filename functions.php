@@ -138,7 +138,7 @@ add_action( 'widgets_init', 'rebeldes_widgets_init' );
  * Enqueue scripts and styles.
  */
 function rebeldes_scripts() {
-	wp_enqueue_style( 'rebeldes-style', get_stylesheet_uri(), array(), _S_VERSION );
+  //wp_enqueue_style( 'rebeldes-style', get_stylesheet_uri(), array(), _S_VERSION );
         wp_enqueue_style( 'rebeldes-main-style', get_template_directory_uri() . '/main.css', array(), _S_VERSION );
         
 	wp_style_add_data( 'rebeldes-style', 'rtl', 'replace' );
@@ -154,7 +154,7 @@ add_action( 'wp_enqueue_scripts', 'rebeldes_scripts' );
 
 
 require get_template_directory() . '/post_types/artists.php';
-  require get_template_directory() . '/post_types/curator.php';  
+require get_template_directory() . '/post_types/curator.php';
 
 
 add_action( 'after_switch_theme', 'flush_rewrite_rules' );
@@ -166,4 +166,11 @@ function myplugin_flush_rewrites() {
   // call your CPT registration function here (it should also be hooked into 'init')
   myplugin_custom_post_types_registration();
   flush_rewrite_rules();
+}
+
+
+add_action('after_setup_theme', 'hide_admin_bar');
+
+function hide_admin_bar() {
+  show_admin_bar(false);
 }

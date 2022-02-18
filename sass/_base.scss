@@ -1,0 +1,236 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: ygrosansbeta, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--black);
+  overflow-x: hidden;
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--white);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 0.3em;
+}
+
+h1, h2, h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.h-4xl,
+.h-3xl,
+.h-xl-caps,
+.h-l-caps,
+.h-b-caps,
+.h-b-caps {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.3em;
+}
+
+
+h1,
+.h-4xl {
+  font-size: var(--h-4xl);
+}
+
+h2,
+.h-3xl {
+  font-size: var(--h-3xl);
+}
+
+.h-2xl {
+  font-size: var(--h-2xl);
+}
+
+h3,
+.h-xl-caps {
+  font-size: var(--h-xl);
+}
+
+blockquote,
+blockquote p,
+.h-xl {
+  font-weight: 500;
+  font-size: var(--h-xl);
+}
+
+h4,
+.h-l {
+  font-size: var(--h-l);
+}
+
+.h-l-caps {
+  font-size: var(--h-l);
+}
+
+h5,
+.h-2m {
+  font-size: var(--h-2m);
+}
+h6,
+.h-m {
+  font-size: var(--h-m);
+}
+.h-b {
+  font-size: var(--h-b);
+}
+.h-b-caps {
+  font-size: var(--h-b);
+}
+.h-s {
+  font-size: var(--h-s);
+}
+.h-s-caps {
+  font-size: var(--h-s);
+  letter-spacing: 0.05em;
+}
+
+
+.r-l {
+  font-weight: 500;
+  font-size: var(--r-l);
+}
+
+.r-m {
+  font-size: var(--r-m);
+}
+
+p,
+ul,
+ol,
+.r {
+  line-height: 1.7;
+  font-size: var(--r);
+}
+
+small,
+.r-s {
+  line-height: 1.7;
+  font-size: var(--r-s);
+}
+
+.r-s-bold {
+  font-weight: 500;
+  line-height: 1.4;
+  font-size: var(--r-s);
+}
+
+.r-xs {
+  line-height: 1.7;
+  font-size: var(--r-xs);
+}
+
+.r-2xs {
+  line-height: 1.5;
+  font-size: var(--r-2xs);
+}
+
+
+$spaces: ("10": var(--s-10),
+          "20": var(--s-20),
+          "30": var(--s-30),
+          "40": var(--s-40),
+          "60": var(--s-60),
+          "90": var(--s-90),
+          "115": var(--s-115),
+          "240": var(--s-240));
+
+@each $key, $value in $spaces {
+  .p-#{$key} {
+    padding: #{$value};
+  }
+  .p-t-#{$key} {
+    padding-top: #{$value};
+  }
+  .p-b-#{$key} {
+    padding-top: #{$value};
+  }
+  .p-s-#{$key} {
+    padding-top: #{$value};
+  }
+  .p-e-#{$key} {
+    padding-top: #{$value};
+  }
+  .p-y-#{$key} {
+    padding-top: #{$value};
+    padding-bottom: #{$value};
+  }
+  .p-x-#{$key} {
+    padding-left: #{$value};
+    padding-right: #{$value};
+  }
+  .m-#{$key} {
+    margin: #{$value}
+  }
+  .m-t-#{$key} {
+    margin-top: #{$value};
+  }
+  .m-b-#{$key} {
+    margin-top: #{$value};
+  }
+  .m-s-#{$key} {
+    margin-top: #{$value};
+  }
+  .m-e-#{$key} {
+    margin-top: #{$value};
+  }
+  .m-y-#{$key} {
+    margin-top: #{$value};
+    margin-bottom: #{$value};
+  }
+  .m-x-#{$key} {
+    margin-left: #{$value};
+    margin-right: #{$value};
+  }
+}
+
+
+ul,
+ol {
+  margin: 0 0 1.5em 0;
+  padding: 0 0 0 1.4em;
+}
+
+ul,
+ol,
+p {
+  margin-bottom: 1.5em;
+}
+
+img,
+iframe,
+object {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+blockquote {
+  margin: 0 0 0.5em 0;
+
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+}

@@ -15,5 +15,50 @@
   --gradient4: linear-gradient(180deg, #C18FFF 0%, #7F1BFF 100%);
   --gradient5: linear-gradient(180deg, #7F1BFF 0%, #D5BEF3 100%);
 
+  --bp-s: 375px;
+  --bp-m: 1024px;
+  --bp-l: 1512px;
+  --bp-lx: 1920px;
 
+  --border-style: 2px dashed #7F1BFF;
+  --border-radius: 30px;
+  --border-style-invert: 2px dashed #FFFFFF;
+
+  // medium, 1.1
+  --h-4xl: 144px;
+  --h-3xl: 96px;
+  --h-2xl: 64px;
+  --h-xl: 48px;
+  --h-l: 36px; // cpas 0.03em
+  --h-2m: 30px;
+  --h-m: 24px;
+  --h-b: 21px; // caps 0.03em
+  --h-s: 18px; // caps 0.05em
+
+  --r-l: 36px;
+  --r-m: 24px;
+  --r: 21px;
+  --r-s-bold: 18px;
+  --r-s: 18px;
+  --r-xs: 16px;
+  --r-2xs: 12px;
+
+  --s-10: 10px;
+  --s-20: 20px;
+  --s-30: 30px;
+  --s-40: 40px;
+  --s-60: 60px;
+  --s-90: 90px;
+  --s-115: 115px;
+  --s-240: 240px;
 }
+
+$bp-s: 760px;
+$bp-m: 1024px;
+$bp-l: 1512px;
+$bp-xl: 1920px;
+
+$max-width: 1512px;
+
+$col-num: 12;
+$col-width: 100 / 12;
