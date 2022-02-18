@@ -1,0 +1,40 @@
+.site-page {
+  .layout-inner {
+
+
+    .entry-title {
+      margin: 0;
+    }
+    .entry-title {
+      margin: 0;
+      background: var(--gradient4);
+      background-clip: text;
+      color: transparent;
+    }
+
+    article {
+      padding-bottom: var(--s-115);
+    }
+
+    @media screen and (min-width: $bp-m) {
+
+      article {
+        display: grid;
+        grid-template-rows: 150px 1fr;
+        grid-template-columns: repeat(12, 8.35%);
+        padding: 0 var(--s-10) var(--s-115);
+      }
+
+      .entry-header {
+        grid-row: 1;
+        grid-column: 2 / span 12;
+      }
+      .entry-content {
+        grid-row: 2;
+        grid-column: 4 / span 7;
+      }
+
+    }
+  }
+
+}

@@ -49,12 +49,11 @@ h1, h2, h3 {
 }
 
 
-h1,
 .h-4xl {
   font-size: var(--h-4xl);
 }
 
-h2,
+h1,
 .h-3xl {
   font-size: var(--h-3xl);
 }
@@ -63,7 +62,7 @@ h2,
   font-size: var(--h-2xl);
 }
 
-h3,
+h2,
 .h-xl-caps {
   font-size: var(--h-xl);
 }
@@ -75,7 +74,7 @@ blockquote p,
   font-size: var(--h-xl);
 }
 
-h4,
+h3,
 .h-l {
   font-size: var(--h-l);
 }
@@ -84,14 +83,15 @@ h4,
   font-size: var(--h-l);
 }
 
-h5,
+h4,
 .h-2m {
   font-size: var(--h-2m);
 }
-h6,
+h5,
 .h-m {
   font-size: var(--h-m);
 }
+h6,
 .h-b {
   font-size: var(--h-b);
 }

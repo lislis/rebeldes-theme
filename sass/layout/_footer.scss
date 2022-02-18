@@ -5,8 +5,6 @@
   background: var(--gradient2);
 
   @media screen and (min-width: $bp-m) {
-    //padding-left: 8.35%;
-    //padding-right: 8.35%;
     .layout-inner {
       display: flex;
       flex-flow: row nowrap;
