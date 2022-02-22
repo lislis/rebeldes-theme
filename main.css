@@ -732,23 +732,40 @@ blockquote p {
 	padding: 0 0.5rem;
 }
 
-.site-header {
-	display: grid;
-	grid-template-columns: 1fr 210px 1fr;
-	grid-template-rows: 50px 1fr;
-	padding-top: var(--s-10);
-	padding-bottom: var(--s-60);
+.site-header .site-claim,
+.site-header .main-navigation,
+.site-header .language-navigation {
+	display: none;
 }
 
-.site-header .menu {
+@media screen and (min-width: 1024px) {
+	.site-header {
+		display: grid;
+		grid-template-columns: 1fr 210px 1fr;
+		grid-template-rows: 50px 1fr;
+		padding-top: var(--s-10);
+		padding-bottom: var(--s-60);
+	}
+	.site-header .main-navigation,
+	.site-header .language-navigation {
+		display: block;
+	}
+	.site-header .site-claim {
+		display: flex;
+	}
+	.site-header .menu {
+		display: flex;
+		justify-content: space-evenly;
+	}
+}
+
+.menu {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	display: flex;
-	justify-content: space-evenly;
 }
 
-.site-header .menu a {
+.menu a {
 	color: var(--purple2);
 	font-size: var(--h-s);
 	font-weight: 500;
@@ -757,20 +774,119 @@ blockquote p {
 	text-decoration: none;
 }
 
+.menu a:hover, .menu a:active {
+	border-bottom: 1px solid currentColor;
+}
+
+.site-header-mobile {
+	background: var(--gradient2);
+	padding: var(--s-20);
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 89;
+	transform: translate3d(0, 100%, 0);
+	transition: transform 200ms cubic-bezier(0.03, 0.34, 0.23, -0.22);
+}
+
+.site-header-mobile.is-open {
+	transform: translate3d(0, 0, 0);
+}
+
+.site-header-mobile.is-open .site-title {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.site-header-mobile a {
+	color: var(--white);
+}
+
+.site-header-mobile .site-title {
+	margin: 0 auto var(--s-115);
+	opacity: 0;
+	transform: scale(0.95);
+	transition: opacity 200ms ease-in-out 120ms, transform 200ms ease-in-out 150ms;
+}
+
+.site-header-mobile .mobile-main-navigation {
+	margin-bottom: var(--s-60);
+}
+
+.site-header-mobile .mobile-main-navigation li {
+	line-height: 1.3;
+}
+
+.site-header-mobile .mobile-main-navigation a {
+	font-size: 32px;
+}
+
+.site-header-mobile .mobile-secondary-navigation ul {
+	margin-bottom: var(--s-40);
+}
+
+.site-header-mobile .mobile-secondary-navigation a {
+	font-size: var(--h-m);
+	text-transform: initial;
+}
+
+.site-header-mobile .mobile-secondary-navigation li:before {
+	color: var(--white);
+}
+
+.site-header-mobile .menu-lang-container ul {
+	display: flex;
+}
+
+@media screen and (min-width: 1024px) {
+	.site-header-mobile-wrapper {
+		display: none;
+	}
+}
+
 .site-branding {
 	grid-column: 2;
 	grid-row: 1 / span 2;
+	text-align: center;
+	margin-bottom: var(--s-40);
+	padding-top: var(--s-20);
 }
 
-.site-title {
-	width: 210px;
-	height: 210px;
-	margin: 0;
+@media screen and (min-width: 1024px) {
+	.site-branding {
+		margin-bottom: 0;
+		padding-top: 0;
+	}
 }
 
-.site-title svg {
+.site-branding .site-title {
+	width: 164px;
+	height: 164px;
+	margin: auto;
+}
+
+@media screen and (min-width: 1024px) {
+	.site-branding .site-title {
+		width: 210px;
+		height: 210px;
+	}
+}
+
+.site-branding .site-title a {
+	display: block;
+}
+
+.site-branding .site-title svg {
 	width: 100%;
 	height: auto;
+}
+
+.site-branding-mobile {
+	text-align: center;
 }
 
 .site-claim {
@@ -797,10 +913,36 @@ blockquote p {
 	justify-content: space-between;
 }
 
-@media screen and (min-width: 760px) {
-	.main-navigation .menu-toggle {
-		display: none;
-	}
+.menu-toggle {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 90;
+	width: 2.2rem;
+	height: 2.2rem;
+	text-align: center;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.menu-toggle--open,
+.menu-toggle--close {
+	display: inline-block;
+}
+
+.menu-toggle--open svg,
+.menu-toggle--close svg {
+	width: 100%;
+	height: auto;
+}
+
+.menu-toggle--open {
+	max-width: 30px;
+}
+
+.menu-toggle--close {
+	max-width: 22px;
 }
 
 .language-navigation {
@@ -812,12 +954,21 @@ blockquote p {
 	justify-content: flex-end;
 }
 
-.language-navigation .menu li + li:before {
+.menu-lang-container li + li:before,
+.language-navigation li + li:before {
 	content: "/";
 	display: inline-block;
 	margin: 0 0.3em;
 	color: var(--purple2);
 	font-weight: 500;
+}
+
+.a11y-hidden {
+	display: none;
+}
+
+.is-hidden {
+	display: none;
 }
 
 .site-footer {

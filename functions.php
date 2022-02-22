@@ -51,6 +51,7 @@ function rebeldes_setup() {
 		array(
 			'menu-1' => esc_html__( 'Primary', 'rebeldes' ),
                         'menu-2' => esc_html__('Langugae', 'rebeldes'),
+                        'menu-3' => esc_html__('Secondary', 'rebeldes'),
 		)
 	);
 
