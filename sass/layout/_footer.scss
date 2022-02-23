@@ -54,6 +54,7 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: var(--s-20);
+    margin-top: 0;
     @media screen and (min-width: $bp-s) {
       margin-bottom: var(--s-40);
     }
@@ -83,4 +84,7 @@
     }
   }
 
+  .site-totop {
+    text-align: center;
+  }
 }

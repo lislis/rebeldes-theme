@@ -133,6 +133,15 @@
     width: 164px;
     height: 164px;
     margin: auto;
+    opacity: 1;
+    transition: opacity 120ms linear;
+
+    @media screen and (max-width: $bp-m - 1px) {
+      &.is-fadeout {
+        opacity: 0
+      }
+    }
+
     @media screen and (min-width: $bp-m) {
       width: 210px;
       height: 210px;
@@ -149,6 +158,15 @@
 
 .site-branding-mobile {
   text-align: center;
+  .site-title {
+    width: 164px;
+    height: 164px;
+    margin: 0 auto var(--s-60);
+  }
+  svg {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .site-claim {

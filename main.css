@@ -867,6 +867,14 @@ blockquote p {
 	width: 164px;
 	height: 164px;
 	margin: auto;
+	opacity: 1;
+	transition: opacity 120ms linear;
+}
+
+@media screen and (max-width: 1023px) {
+	.site-branding .site-title.is-fadeout {
+		opacity: 0;
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -887,6 +895,17 @@ blockquote p {
 
 .site-branding-mobile {
 	text-align: center;
+}
+
+.site-branding-mobile .site-title {
+	width: 164px;
+	height: 164px;
+	margin: 0 auto var(--s-60);
+}
+
+.site-branding-mobile svg {
+	width: 100%;
+	height: auto;
 }
 
 .site-claim {
@@ -1028,6 +1047,7 @@ blockquote p {
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 	margin-bottom: var(--s-20);
+	margin-top: 0;
 }
 
 @media screen and (min-width: 760px) {
@@ -1055,6 +1075,10 @@ blockquote p {
 
 .site-footer .footer-logos figure {
 	margin-right: var(--s-60);
+}
+
+.site-footer .site-totop {
+	text-align: center;
 }
 
 .site-page .layout-inner .entry-title {

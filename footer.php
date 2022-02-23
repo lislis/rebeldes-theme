@@ -21,6 +21,7 @@
              document.querySelector('.menu-toggle--open').classList.toggle('is-hidden');
              document.querySelector('.menu-toggle--close').classList.toggle('is-hidden');
              document.querySelector('#menu-toggle').toggleAttribute('aria-expanded');
+             document.querySelector('.site-branding .site-title').classList.toggle('is-fadeout');
          });
 </script>
 </html>
