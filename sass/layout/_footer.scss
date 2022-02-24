@@ -4,6 +4,15 @@
   color: var(--white);
   background: var(--gradient2);
 
+  a {
+    color: var(--white);
+    text-decoration: none;
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
   @media screen and (min-width: $bp-m) {
     .layout-inner {
       display: flex;

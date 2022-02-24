@@ -107,7 +107,9 @@ h6,
 }
 
 .intro,
-.r-l {
+.r-l,
+.r-l p,
+.intro p {
   line-height: 1.4;
   font-weight: 500;
   font-size: var(--r-l);
