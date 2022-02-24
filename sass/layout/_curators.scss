@@ -1,0 +1,51 @@
+.site-page {
+  .rebeldes_curators {
+
+    .entry-title {
+      margin: 0;
+      background: var(--gradient5);
+      background-clip: text;
+      color: transparent;
+    }
+
+    display: flex;
+    flex-flow: column nowrap;
+
+    .entry-image {
+      order: 1;
+      z-index: 1;
+    }
+    .entry-header {
+      order: 2;
+      z-index: 2;
+      transform: translateY(-1.4em);
+    }
+    .entry-content {
+      order: 3;
+    }
+
+
+    @media screen and (min-width: $bp-s) {
+      display: grid;
+      grid-template-rows: 240px 275px 100px 40px 1fr;
+      grid-template-columns: repeat(24, 4.17%);
+      padding: 0 var(--s-10) var(--s-115);
+
+      .entry-header {
+        grid-column: 9 / span 11;
+        grid-row: 2;
+        transform: translateY(0);
+      }
+
+      .entry-content {
+        grid-column: 12 / span 11;
+        grid-row: 4 / span 2;
+      }
+      .entry-image {
+        grid-row: 1 / span 4;
+        grid-column: 3 / span 8;
+
+      }
+    }
+  }
+}

@@ -106,8 +106,9 @@ h6,
   letter-spacing: 0.05em;
 }
 
-
+.intro,
 .r-l {
+  line-height: 1.4;
   font-weight: 500;
   font-size: var(--r-l);
 }
@@ -141,6 +142,7 @@ small,
   font-size: var(--r-xs);
 }
 
+figcaption,
 .r-2xs {
   line-height: 1.5;
   font-size: var(--r-2xs);
@@ -164,13 +166,13 @@ $spaces: ("10": var(--s-10),
     padding-top: #{$value};
   }
   .p-b-#{$key} {
-    padding-top: #{$value};
+    padding-bottom: #{$value};
   }
   .p-s-#{$key} {
-    padding-top: #{$value};
+    padding-left: #{$value};
   }
   .p-e-#{$key} {
-    padding-top: #{$value};
+    padding-right: #{$value};
   }
   .p-y-#{$key} {
     padding-top: #{$value};
@@ -187,13 +189,13 @@ $spaces: ("10": var(--s-10),
     margin-top: #{$value};
   }
   .m-b-#{$key} {
-    margin-top: #{$value};
+    margin-bottom: #{$value};
   }
   .m-s-#{$key} {
-    margin-top: #{$value};
+    margin-left: #{$value};
   }
   .m-e-#{$key} {
-    margin-top: #{$value};
+    margin-right: #{$value};
   }
   .m-y-#{$key} {
     margin-top: #{$value};
@@ -203,6 +205,16 @@ $spaces: ("10": var(--s-10),
     margin-left: #{$value};
     margin-right: #{$value};
   }
+}
+
+.p-0 {
+  padding: 0;
+}
+.m-0 {
+  margin: 0;
+}
+.lh-1 {
+  line-height: 1;
 }
 
 

@@ -14,7 +14,7 @@
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'rebeldes' ); ?></h1>
 	</header><!-- .page-header -->
 
-	<div class="page-content">
+	<div class="page-content m-b-240">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 
@@ -30,20 +30,6 @@
 				) . '</p>',
 				esc_url( admin_url( 'post-new.php' ) )
 			);
-
-		elseif ( is_search() ) :
-			?>
-
-			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'rebeldes' ); ?></p>
-			<?php
-			get_search_form();
-
-		else :
-			?>
-
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'rebeldes' ); ?></p>
-			<?php
-			get_search_form();
 
 		endif;
 		?>

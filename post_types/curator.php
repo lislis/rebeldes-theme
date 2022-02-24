@@ -39,7 +39,7 @@ function rebeldes_curator_init() {
         'show_in_menu'       => true,
         'show_in_rest'       => false,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'artists'),
+        'rewrite'            => array( 'slug' => 'curators'),
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
