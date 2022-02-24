@@ -48,6 +48,9 @@ h1, h2, h3 {
   margin-bottom: 0.3em;
 }
 
+strong {
+  font-weight: 600;
+}
 
 .h-4xl {
   font-size: var(--h-4xl);
@@ -246,5 +249,38 @@ blockquote {
   p {
     margin: 0;
     line-height: 1.4;
+  }
+}
+
+
+.btn, input[type=submit] {
+  color: var(--purple2);
+  border: 2px dotted currentColor;
+  border-radius: 30px;
+  border-type: inset;
+  font: inherit;
+  font-size: var(--r-s);
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 2px 20px;
+}
+
+.btn-dropdown {
+  cursor: pointer;
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 21px;
+    height: 12px;
+    margin-left: var(--s-20);
+    background-size: cover;
+    background-image: url('/wp-content/themes/rebeldes/assets/icons/drop-purple.svg');
+    transform-origin: center center;
+    transition: transform 120ms linear;
+  }
+  &.is-open {
+    &:after {
+      transform: rotateX(180deg);
+    }
   }
 }

@@ -1,0 +1,25 @@
+.site-calendar {
+  .layout-inner {
+
+  }
+  .events-divider {
+    border-bottom: 2px dashed var(--purple2);
+  }
+
+  .events-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .events-past-title {
+    color: var(--purple2);
+  }
+
+  .events-date {
+    background-image: var(--gradient1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}

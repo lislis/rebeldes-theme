@@ -23,5 +23,14 @@
              document.querySelector('#menu-toggle').toggleAttribute('aria-expanded');
              document.querySelector('.site-branding .site-title').classList.toggle('is-fadeout');
          });
+
+ document.querySelectorAll('.js-event-accordion').forEach((el, i) => {
+     el.addEventListener('click', (evt) => {
+         evt.target.classList.toggle('is-open');
+         evt.target.nextElementSibling.classList.toggle('is-hidden');
+
+     });
+ });
+
 </script>
 </html>
