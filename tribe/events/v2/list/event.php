@@ -13,7 +13,7 @@
         <h2 class="h-l"><?php echo $event->post_title; ?></h2>
 
         <div class="events-content">
-            <p><?php echo get_post_meta($event->ID, 'intro', true); ?></p>
+            <?php the_excerpt(); ?>
         </div>
         <div class="event-venue">
             <p class="r-s">
