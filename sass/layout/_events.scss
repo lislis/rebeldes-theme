@@ -1,15 +1,47 @@
 .site-calendar {
   .layout-inner {
-
+    padding: 0 var(--s-10);
   }
+  @media screen and (min-width: $bp-s) {
+    .events-title .layout-inner {
+      padding-left: 8vw;
+    }
+
+    .events-layout .layout-inner {
+      padding-left: 24vw;
+
+    }
+  }
+
+  @media screen and (min-width: $bp-l) {
+    .events-title .layout-inner {
+      //padding-left: 4vw;
+      padding-left: 121px;
+    }
+
+    .events-layout .layout-inner {
+      //padding-left: 16vw;
+      padding-left: 363px;
+
+    }
+  }
+
   .events-divider {
     border-bottom: 2px dashed var(--purple2);
+  }
+
+  a {
+    color: var(--purple2);
   }
 
   .events-list {
     margin: 0;
     padding: 0;
     list-style: none;
+
+    .h-l {
+      text-transform: initial;
+    }
   }
 
   .events-past-title {
@@ -21,5 +53,36 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+  }
+
+  .event-accordion-body {
+    height: auto;
+    padding-top: var(--s-40);
+    transition: opacity 120ms linear;
+    overflow: hidden;
+    opacity: 1;
+    &.is-closed {
+      height: 0;
+      padding-top: 0;
+      opacity: 0;
+    }
+  }
+
+  .events-past {
+    color: #5B5B5B;
+    .events-divider {
+      border-color: #5B5B5B;
+    }
+    a,
+    .btn,
+    .events-date {
+      color: #5B5B5B;
+    }
+    .btn-dropdown {
+      &:after {
+        background-image: url('/wp-content/themes/rebeldes/assets/icons/drop-grey.svg');
+      }
+    }
+
   }
 }

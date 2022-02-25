@@ -263,6 +263,11 @@ blockquote {
   text-transform: uppercase;
   font-weight: 500;
   padding: 2px 20px;
+  background-color: transparent;
+  &:hover,
+  &:active {
+    background-color: transparent;
+  }
 }
 
 .btn-dropdown {

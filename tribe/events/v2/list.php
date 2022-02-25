@@ -24,22 +24,21 @@
 
 ?>
 <main class="site-calendar m-b-240">
-
-    <div class="events-divider">
+    <div class="events-divider events-title p-b-40">
         <div class="layout-inner">
-            <h1><?php esc_html_e('Events', 'rebeldes'); ?></h1>
+            <h1 class="m-0"><?php esc_html_e('Events', 'rebeldes'); ?></h1>
         </div>
     </div>
 
-    <div class="">
+    <section class="events-layout">
         <ul class="events-list">
 	    <?php foreach ( $events as $event ) : ?>
                 <?php $this->template( 'list/event', [ 'event' => $event ] ); ?>
 	    <?php endforeach; ?>
         </ul>
-    </div>
-    <section>
-        <div class="events-divider">
+    </section>
+    <section class="events-past events-layout">
+        <div class="events-divider m-t-240">
             <div class="layout-inner">
                 <h2 class="events-past-title"><?php esc_html_e('Past events', 'rebeldes'); ?></h2>
             </div>

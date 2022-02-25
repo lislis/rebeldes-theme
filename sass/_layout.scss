@@ -3,3 +3,9 @@
   margin: auto;
   padding: 0 0.5rem;
 }
+
+.current-lang a,
+.current-menu-item a {
+  //text-decoration: underline;
+  border-bottom: 1px solid currentColor;
+}

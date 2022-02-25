@@ -27,7 +27,7 @@
  document.querySelectorAll('.js-event-accordion').forEach((el, i) => {
      el.addEventListener('click', (evt) => {
          evt.target.classList.toggle('is-open');
-         evt.target.nextElementSibling.classList.toggle('is-hidden');
+         evt.target.nextElementSibling.classList.toggle('is-closed');
 
      });
  });
