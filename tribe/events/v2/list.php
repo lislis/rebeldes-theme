@@ -38,22 +38,24 @@
         </ul>
     </section>
     <section class="events-past events-layout">
+        <?php
+        $today = new DateTime();
+        $past_events = tribe_get_events(array('start_date' => '2022-02-01 00:00',
+                                              'end_date' => $today->format('Y-m-d H:i:s'))); ?>
+        <?php if (count($past_events) > 0): ?>
+
         <div class="events-divider m-t-240">
             <div class="layout-inner">
                 <h2 class="events-past-title"><?php esc_html_e('Past events', 'rebeldes'); ?></h2>
             </div>
         </div>
 
-        <?php
-        $today = new DateTime();
-        $past_events = tribe_get_events(array('start_date' => '2022-02-01 00:00',
-                                              'end_date' => $today->format('Y-m-d H:i:s'))); ?>
-
         <ul class="events-list">
 	    <?php foreach ( $past_events as $event ) : ?>
                 <?php $this->template( 'list/event', [ 'event' => $event ] ); ?>
 	    <?php endforeach; ?>
         </ul>
+        <?php endif; ?>
     </section>
 
 </main>
