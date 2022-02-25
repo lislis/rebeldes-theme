@@ -257,7 +257,7 @@ blockquote {
   color: var(--purple2);
   border: 2px dotted currentColor;
   border-radius: 30px;
-  border-type: inset;
+  //border-type: inset;
   font: inherit;
   font-size: var(--r-s);
   text-transform: uppercase;
@@ -279,7 +279,7 @@ blockquote {
     height: 12px;
     margin-left: var(--s-20);
     background-size: cover;
-    background-image: url('/wp-content/themes/rebeldes/assets/icons/drop-purple.svg');
+    background-image: url(/wp-content/themes/rebeldes/assets/icons/drop-purple.svg);
     transform-origin: center center;
     transition: transform 120ms linear;
   }

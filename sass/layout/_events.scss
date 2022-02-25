@@ -15,12 +15,10 @@
 
   @media screen and (min-width: $bp-l) {
     .events-title .layout-inner {
-      //padding-left: 4vw;
       padding-left: 121px;
     }
 
     .events-layout .layout-inner {
-      //padding-left: 16vw;
       padding-left: 363px;
 
     }
@@ -80,7 +78,7 @@
     }
     .btn-dropdown {
       &:after {
-        background-image: url('/wp-content/themes/rebeldes/assets/icons/drop-grey.svg');
+        background-image: url(/wp-content/themes/rebeldes/assets/icons/drop-grey.svg);
       }
     }
 
