@@ -26,7 +26,7 @@
 <main class="site-calendar m-b-240">
     <div class="events-divider events-title p-b-40">
         <div class="layout-inner">
-            <h1 class="m-0"><?php esc_html_e('Events', 'rebeldes'); ?></h1>
+            <h1 class="m-0 events-site-title"><?php esc_html_e('Events', 'rebeldes'); ?></h1>
         </div>
     </div>
 

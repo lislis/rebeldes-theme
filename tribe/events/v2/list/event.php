@@ -6,11 +6,11 @@
         $end_date = date_parse($event->end_date);
         ?>
 
-        <p class="h-3xl m-0 events-date"><time datetime="<?php echo $event->start_date ?>">
+        <p class="m-0 events-date"><time datetime="<?php echo $event->start_date ?>">
             <?php echo date('d/m/y', strtotime($event->start_date)); ?>
         </time></p>
 
-        <h2 class="h-l"><?php echo $event->post_title; ?></h2>
+        <h2 class="events-item-title"><?php echo $event->post_title; ?></h2>
 
         <div class="events-content">
             <?php the_excerpt(); ?>

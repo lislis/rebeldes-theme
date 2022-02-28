@@ -105,9 +105,12 @@ function rebeldes_setup() {
         add_image_size( 'spalten-12', 1512, 862, array( 'center', 'center' ) ); // Hard crop left top
         add_image_size( 'spalten-10', 1258, 710, array( 'center', 'center' ) ); // Hard crop left top
         add_image_size( 'spalten-6', 749, 499, array( 'center', 'center' ) ); // Hard crop left top
-        add_image_size( 'spalten-4-land', 497, 321, array( 'center', 'center' ) ); // Hard crop left top
-        add_image_size( 'spalten-4-port', 497, 688, array( 'center', 'center' ) ); // Hard crop left top
+        add_image_size( 'spalten-4-land', 497, 321, true ); // Hard crop left top
+        add_image_size( 'spalten-4-port', 497, 688, true ); // Hard crop left top
         add_image_size( 'spalten-2.5', 307, 421, array( 'center', 'center' ) ); // Hard crop left top
+
+        add_image_size( 'artist-teaser', 600, 700, true); // Hard crop left top
+        add_image_size( 'artist-big', 972, 1372, true);
 }
 add_action( 'after_setup_theme', 'rebeldes_setup' );
 
