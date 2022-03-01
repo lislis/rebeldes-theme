@@ -4,8 +4,10 @@
   padding: 0 0.5rem;
 }
 
-.current-lang a,
 .current-menu-item a {
-  //text-decoration: underline;
-  border-bottom: 1px solid currentColor;
+  text-decoration: underline !important;
+  //border-bottom: 1px solid currentColor;
+}
+.current-lang a {
+  text-decoration: underline !important;
 }

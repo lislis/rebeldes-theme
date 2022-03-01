@@ -1,5 +1,14 @@
 .site-artists {
   padding-bottom: var(--s-115);
+
+  @media screen and (min-width: $bp-s) {
+    .layout-inner {
+      display: grid;
+      grid-template-columns: repeat(12, calc(100% / 12));
+      //grid-template-rows: 330px 90px 1fr;
+      //margin-top: -5em;
+    }
+  }
 }
 
 .artists-list {
@@ -7,6 +16,7 @@
   margin: 0;
   padding: 0;
 
+  grid-column: 2 / span 10;
   display: grid;
   grid-template-columns: repeat(2, calc(50% - (var(--s-10) / 2)));
   grid-gap: var(--s-10);
