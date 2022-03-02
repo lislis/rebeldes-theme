@@ -186,3 +186,5 @@ add_action('after_setup_theme', 'hide_admin_bar');
 function hide_admin_bar() {
   show_admin_bar(false);
 }
+
+require get_template_directory() . '/custom_settings.php';

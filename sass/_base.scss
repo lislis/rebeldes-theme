@@ -263,6 +263,7 @@ blockquote {
 
 
 .btn, input[type=submit] {
+  display: inline-block;
   color: var(--purple2);
   border: 2px dotted currentColor;
   border-radius: 30px;
@@ -273,14 +274,17 @@ blockquote {
   font-weight: 500;
   padding: 2px 20px;
   background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 160ms ease-in-out;
   &:hover,
   &:active {
-    background-color: transparent;
+    background-color: var(--purple2);
+    color: var(--white);
   }
 }
 
 .btn-dropdown {
-  cursor: pointer;
   &:after {
     content: "";
     display: inline-block;
@@ -292,9 +296,37 @@ blockquote {
     transform-origin: center center;
     transition: transform 120ms linear;
   }
+  &:hover,
+  &:active {
+    &:after {
+      background-image: url(/wp-content/themes/rebeldes/assets/icons/drop-white.svg);
+    }
+  }
   &.is-open {
     &:after {
       transform: rotateX(180deg);
+    }
+  }
+}
+
+.btn-download {
+  padding: 8px 20px;
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 18px;
+    margin-left: var(--s-20);
+    background-size: cover;
+    background-image: url(/wp-content/themes/rebeldes/assets/icons/download-purple.svg);
+    transform-origin: center center;
+    transition: transform 120ms linear;
+    vertical-align: sub;
+  }
+  &:hover,
+  &:active {
+    &:after {
+      background-image: url(/wp-content/themes/rebeldes/assets/icons/download-white.svg);
     }
   }
 }

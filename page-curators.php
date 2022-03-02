@@ -13,7 +13,7 @@ get_header();
 <main id="primary" class="site-main site-page">
     <div class="layout-inner">
         <article class="page-intro-only">
-            <div class="entry-content intro">
+            <div class="entry-content">
                 <?php
                 while ( have_posts() ) :
                 the_post();

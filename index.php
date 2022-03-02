@@ -15,21 +15,21 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<main id="primary" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
+    <?php
+    if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+    if ( is_home() && ! is_front_page() ) :
+    ?>
+	<header>
+	    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+	</header>
 				<?php
-			endif;
+			        endif;
 
-			/* Start the Loop */
-			while ( have_posts() ) :
+			        /* Start the Loop */
+			        while ( have_posts() ) :
 				the_post();
 
 				/*
@@ -39,18 +39,18 @@ get_header();
 				 */
 				get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;
+			        endwhile;
 
-			the_posts_navigation();
+			        the_posts_navigation();
 
-		else :
+		                else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			        get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+		                endif;
+		                ?>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php
 get_sidebar();

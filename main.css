@@ -763,6 +763,7 @@ blockquote p {
 
 .btn,
 input[type="submit"] {
+	display: inline-block;
 	color: var(--purple2);
 	border: 2px dotted currentColor;
 	border-radius: 30px;
@@ -772,17 +773,17 @@ input[type="submit"] {
 	font-weight: 500;
 	padding: 2px 20px;
 	background-color: transparent;
+	text-decoration: none;
+	cursor: pointer;
+	transition: background 160ms ease-in-out;
 }
 
 .btn:hover,
 .btn:active,
 input[type="submit"]:hover,
 input[type="submit"]:active {
-	background-color: transparent;
-}
-
-.btn-dropdown {
-	cursor: pointer;
+	background-color: var(--purple2);
+	color: var(--white);
 }
 
 .btn-dropdown::after {
@@ -797,8 +798,35 @@ input[type="submit"]:active {
 	transition: transform 120ms linear;
 }
 
+.btn-dropdown:hover::after,
+.btn-dropdown:active::after {
+	background-image: url(/wp-content/themes/rebeldes/assets/icons/drop-white.svg);
+}
+
 .btn-dropdown.is-open::after {
 	transform: rotateX(180deg);
+}
+
+.btn-download {
+	padding: 8px 20px;
+}
+
+.btn-download::after {
+	content: "";
+	display: inline-block;
+	width: 14px;
+	height: 18px;
+	margin-left: var(--s-20);
+	background-size: cover;
+	background-image: url(/wp-content/themes/rebeldes/assets/icons/download-purple.svg);
+	transform-origin: center center;
+	transition: transform 120ms linear;
+	vertical-align: sub;
+}
+
+.btn-download:hover::after,
+.btn-download:active::after {
+	background-image: url(/wp-content/themes/rebeldes/assets/icons/download-white.svg);
 }
 
 .layout-inner {
@@ -824,7 +852,7 @@ input[type="submit"]:active {
 
 	.site-header {
 		display: grid;
-		grid-template-columns: 3fr auto 2fr 1fr;
+		grid-template-columns: 42% 16% 42%;
 		grid-template-rows: auto;
 		padding-top: var(--s-10);
 		padding-bottom: var(--s-60);
@@ -1001,11 +1029,12 @@ input[type="submit"]:active {
 }
 
 .site-claim {
-	grid-column: 4;
+	grid-column: 3;
 	grid-row: 1;
 	display: flex;
 	flex-flow: column;
 	align-items: flex-end;
+	justify-self: end;
 }
 
 .site-description {
@@ -1014,6 +1043,7 @@ input[type="submit"]:active {
 	font-size: 44px;
 	line-height: 0.9;
 	color: var(--purple2);
+	max-width: 11.3rem;
 }
 
 .main-navigation {
@@ -1582,6 +1612,17 @@ input[type="submit"]:active {
 
 .site-calendar .events-past .btn-dropdown::after {
 	background-image: url(/wp-content/themes/rebeldes/assets/icons/drop-grey.svg);
+}
+
+.site-calendar .events-past .btn-dropdown:hover,
+.site-calendar .events-past .btn-dropdown:active {
+	background-color: #5b5b5b;
+	color: var(--white);
+}
+
+.site-calendar .events-past .btn-dropdown:hover::after,
+.site-calendar .events-past .btn-dropdown:active::after {
+	background-image: url(/wp-content/themes/rebeldes/assets/icons/drop-white.svg);
 }
 
 .site-artists {
