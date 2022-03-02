@@ -12,6 +12,9 @@ html, body {
   color: var(--black);
   overflow-x: hidden;
   min-height: 100%;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 body {
@@ -115,7 +118,10 @@ h6,
 .intro p {
   line-height: 1.4;
   font-weight: 500;
-  font-size: var(--r-l);
+  font-size: var(--r);
+  @media screen and (min-width: $bp-m) {
+    font-size: var(--r-l);
+  }
 }
 
 .r-m {
@@ -126,8 +132,12 @@ p,
 ul,
 ol,
 .r {
-  line-height: 1.7;
-  font-size: var(--r);
+  line-height: 1.4;
+  font-size: var(--r-s);
+  @media screen and (min-width: $bp-m) {
+    line-height: 1.7;
+    font-size: var(--r);
+  }
 }
 
 small,
@@ -262,9 +272,10 @@ blockquote {
 }
 
 
-.btn, input[type=submit] {
+.btn, input[type=submit],
+.wp-block-button__link {
   display: inline-block;
-  color: var(--purple2);
+  color: var(--purple2) !important;
   border: 2px dotted currentColor;
   border-radius: 30px;
   //border-type: inset;
@@ -280,11 +291,12 @@ blockquote {
   &:hover,
   &:active {
     background-color: var(--purple2);
-    color: var(--white);
+    color: var(--white) !important;
   }
 }
 
-.btn-dropdown {
+.btn-dropdown,
+.dropdown .wp-block-button__link {
   &:after {
     content: "";
     display: inline-block;

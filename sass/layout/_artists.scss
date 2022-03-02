@@ -36,17 +36,36 @@
   .entry-header {
     transform: translateY(-0.4em);
     padding: 0 var(--s-10);
+    position: relative;
+    z-index: 7;
     //animation: fallDown 300ms linear 1;
   }
 
   .entry-title {
     font-size: var(--h-b);
     margin: 0;
+
   }
 
   .entry-image {
-    padding-bottom: 130%;
-    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    z-index: 6;
+    max-height: 350px;
+    img {
+      transform: scale(1.1) translate3d(0, 0em, 0);
+      animation: jumpy 3s ease-out infinite;
+      animation-play-state: paused;
+      animation-direction: alternate;
+    }
+  }
+
+  a:hover,
+  a:active {
+    .entry-image img {
+      animation-play-state: running;
+    }
+
   }
 
   @media screen and (min-width: $bp-s) {
@@ -270,5 +289,18 @@
         font-size: var(--h-xl);
       }
     }
+  }
+}
+
+
+@keyframes jumpy {
+  0% {
+   transform: scale(1.2) translate3d(0, 0em, 0);
+  }
+  50% {
+    transform: scale(1.2) translate3d(0, -0.8em, 0);
+  }
+  100% {
+    transform: scale(1.2) translate3d(0, 0.8em, 0);
   }
 }

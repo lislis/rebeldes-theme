@@ -40,19 +40,22 @@
 
     <div class="mobile-navbar">
         <?php
-        $title = 'nomatch';
-        if (is_archive()) {
-            $title =  __(explode(' ', get_the_archive_title())[1], 'rebeldes');
-        } else {
-            $title = single_post_title('', false);
+        $title = '';
+        if (!is_front_page()) {
+            if (is_archive()) {
+                $title =  __(explode(' ', get_the_archive_title())[1], 'rebeldes');
+            } else {
+                $title = single_post_title('', false);
 
-            if ($title && $title !== '') {
-                $type = get_post_type($post->ID);
-                if ($type == 'rebeldes_artists') {
-                    $title = __('Artists', 'rebeldes');
+                if ($title && $title !== '') {
+                    $type = get_post_type($post->ID);
+                    if ($type == 'rebeldes_artists') {
+                        $title = __('Artists', 'rebeldes');
+                    }
                 }
             }
         }
+
         ?>
 
         <div class="mobile-navbar-title"><?php echo $title; ?></div>

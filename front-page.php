@@ -18,12 +18,23 @@ get_header();
 <?php
 $fi = $dynamic_featured_image->get_featured_images([$post->ID]);
 $index = array_rand($fi, 1);
-//print_r($fi[$index]);
 ?>
 
 <div class="hero">
     <figure class="hero-cover" style="background-image: url(<?php echo $fi[$index]['full']; ?>)"></figure>
-    <figcaption><?php echo wp_get_attachment_caption($fi[$index]['attachment_id'] ) ?></figcaption>
+    <figcaption>
+        <?php echo wp_get_attachment_caption($fi[$index]['attachment_id'] ) ?>
+    </figcaption>
+
+    <div class="hero-description">
+        <?php $rebeldes_description = get_bloginfo( 'description', 'display' );
+        if ( $rebeldes_description || is_customize_preview() ) :
+        ?>
+            <p class="site-description"><?php echo $rebeldes_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+        <?php endif; ?>
+    </div>
+
+
     <div class="hero-logo">
         <h1 class=""><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
             <?php get_template_part( 'design/svg', 'logo' ); ?>
@@ -32,86 +43,48 @@ $index = array_rand($fi, 1);
     </div>
 </div>
 
-
-
 <main id="primary" class="site-main site-frontpage">
-    <header class="front-sideline">
-        <p class="front-date"><?php echo get_option('front_exhibition_date'); ?></p>
-        <p class="front-place"><?php echo get_option('front_exhibition_place'); ?></p>
-    </header>
-    <div class="front-content">
-        <div class="layout-inner">
-
-        <?php
-        while ( have_posts() ) :
-        the_post();
-
-        get_template_part( 'template-parts/content', 'front' );
-
-        endwhile; // End of the loop.
-        ?>
-        </div>
-    </div>
-
-</main>
-<div>
-    <aside class="artists-overview front-footer">
-        <div class="layout-inner">
-            <?php
-            $posts = get_posts(array('post_type' => 'rebeldes_artists')); ?>
-
-            <ul>
-                <?php
-                foreach ($posts as $post): ?>
-                    <li><a href="<?php the_permalink() ?>"><?php the_title($post->post_ID) ?></a><span class="artists-overview-sep">*</span></li>
-                <?php
-                endforeach;
-                ?>
-            </ul>
-        </div>
-    </aside>
-    <div class="front-footer">
-
-        <div class="layout-inner">
-            <div>
-        <?php
-        if (get_option('front_catalogue')) :
-        ?>
-            <div class="m-b-40">
-            <a href="<?php echo get_option('front_catalogue')?>" download class="btn  btn-download">
-                <?php _e('Catalogue', 'rebeldes'); ?>
-            </a>
-            </div>
-        <?php endif; ?>
-
-        <?php
-        if (get_option('front_flyer')) :
-        ?>
-            <div>
-            <a href="<?php echo get_option('front_flyer')?>" download class="btn btn-download">
-                <?php _e('Flyer', 'rebeldes'); ?>
-            </a>
-            </div>
-        <?php endif; ?>
-            </div>
-        </div>
-    </div>
-    </div>
-</div><!-- #main -->
-
-
-
-<footer class="site-footer">
     <div class="layout-inner">
-        <div class="site-totop">
-            <a href="#primary" title="Jump to top">
-                <svg width="45" height="66" viewBox="0 0 45 66" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.79564 24.9291C3.07939 26.2128 5.15314 26.2128 6.43689 24.9291L19.2086 12.1903V62.1249C19.2086 63.9353 20.6898 65.4166 22.5002 65.4166C24.3106 65.4166 25.7919 63.9353 25.7919 62.1249V12.1903L38.5635 24.962C38.8683 25.2668 39.2301 25.5085 39.6283 25.6734C40.0264 25.8384 40.4532 25.9233 40.8842 25.9233C41.3152 25.9233 41.7419 25.8384 42.1401 25.6734C42.5383 25.5085 42.9001 25.2668 43.2048 24.962C43.5095 24.6573 43.7513 24.2955 43.9162 23.8973C44.0811 23.4991 44.166 23.0724 44.166 22.6414C44.166 22.2104 44.0811 21.7837 43.9162 21.3855C43.7513 20.9873 43.5095 20.6255 43.2048 20.3208L24.8044 1.88743C24.4999 1.58228 24.1381 1.34019 23.7399 1.17501C23.3417 1.00983 22.9149 0.924805 22.4838 0.924805C22.0527 0.924805 21.6258 1.00983 21.2276 1.17501C20.8294 1.34019 20.4677 1.58228 20.1631 1.88743L1.79564 20.2878C1.49049 20.5924 1.24839 20.9541 1.08321 21.3523C0.918032 21.7505 0.833008 22.1774 0.833008 22.6085C0.833008 23.0396 0.918032 23.4664 1.08321 23.8647C1.24839 24.2629 1.49049 24.6246 1.79564 24.9291Z" fill="white"/>
-                </svg>
-            </a>
+        <div class="front-content">
+            <header class="front-sideline">
+                <p class="front-date"><?php echo get_option('front_exhibition_date'); ?></p>
+                <p class="front-place"><?php echo get_option('front_exhibition_place'); ?></p>
+            </header>
+            <?php
+            while ( have_posts() ) :
+            the_post();
+
+            get_template_part( 'template-parts/content', 'front' );
+
+            endwhile; // End of the loop.
+            ?>
         </div>
-        <?php
-        get_sidebar();
-        get_footer(); ?>
     </div>
-</footer>
+
+    <?php get_template_part( 'template-parts/artists', 'overview' ); ?>
+
+    <div class="layout-inner">
+        <div class="front-content front-footer">
+            <?php
+            if (get_option('front_catalogue')) : ?>
+                <div class="m-b-40">
+                    <a href="<?php echo get_option('front_catalogue')?>" download class="btn  btn-download">
+                        <?php _e('Catalogue', 'rebeldes'); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+
+            <?php
+            if (get_option('front_flyer')) : ?>
+                <div>
+                    <a href="<?php echo get_option('front_flyer')?>" download class="btn btn-download">
+                        <?php _e('Flyer', 'rebeldes'); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+</main>
+
+<?php get_template_part( 'template-parts/real', 'footer' ); ?>

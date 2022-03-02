@@ -1,67 +1,120 @@
 .hero {
   position: absolute;
   top: 0;
+  width: 100vw;
+  //height: 100vh;
   z-index: 9;
+  display: grid;
+
+  grid-template-rows: 100vh auto;
+  padding: 0 0.5rem;
+
+  @media screen and (min-width: $bp-m) {
+    grid-template-columns: repeat(12, calc(100% / 12));
+    grid-template-rows: 85vh auto;
+    //height: 85vh;
+  }
+
+  figcaption {
+    grid-column: 4 / span 8;
+    grid-row: 2;
+  }
 }
 
 .hero-cover {
-  height: 80vh;
-  width: 100vw;
+  grid-column: 1 / span 12;
+  grid-row: 1;
+  margin: 0 -0.5rem;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.hero-description {
+  position: absolute;
+  top: 0.2rem;
+  right: 0;
+  .site-description {
+    font-size: 7vw;
+    max-width: 48vw;
+  }
+  @media screen and (min-width: $bp-m) {
+    display: none;
+  }
+}
+
 .site-frontpage {
   position: relative;
-  margin-top: 55vh;
+  margin-top: 100vh;
 
-  @media screen and (min-width: $bp-s) {
-    .front-content {
+  @media screen and (min-width: $bp-m) {
+    margin-top: calc(92vh - 300px);
+  }
+  @media screen and (min-width: $bp-l) {
+    //margin-top: 70vh;
+  }
+
+  > .layout-inner {
+    position: relative;
+    @media screen and (min-width: $bp-m) {
       display: grid;
       grid-template-columns: repeat(12, calc(100% / 12));
-      .layout-inner {
-        grid-column: 4 / span 8;
-      }
     }
   }
-}
 
-.front-footer {
-  @media screen and (min-width: $bp-s) {
-    display: grid;
-    grid-template-columns: repeat(12, calc(100% / 12));
-    .layout-inner {
-      width: 100%;
+  .front-content {
+    p:first-of-type {
+      margin-top: 0;
+    }
+
+    @media screen and (min-width: $bp-m) {
       grid-column: 4 / span 8;
     }
-    &.artists-overview {
-      .layout-inner {
-        display: block;
-      }
+  }
+
+  .artists-overview {
+    margin-bottom: var(--s-40);
+  }
+  .front-footer {
+    margin-bottom: var(--s-40);
+    @media screen and (min-width: $bp-m) {
+      margin-bottom: var(--s-90);
     }
   }
-}
+  .front-gallery {
+    @media screen and (min-width: $bp-m) {
+      margin-left: calc(100% / 8 * -1);
+      margin-right: calc(100% / 8);
+      align-items: center;
+    }
 
-
-.artists-overview + .front-footer {
-  margin-top: -50px;
-}
-
-.front-footer {
-  margin-bottom: var(--s-90);
+    figcaption {
+      background: none !important;
+      position: static !important;
+      color: var(--black) !important;
+      text-align: left !important;
+      padding-left: var(--s-20) !important;
+      max-width: 75%;
+    }
+  }
 }
 
 .hero-logo {
-  width: 550px;
-  height: 550px;
+  width: 320px;
+  height: 320px;
   position: fixed;
   z-index: 11;
-  top: 5vh;
+  top: 20vh;
   left: 0;
   right: 0;
   margin: auto;
   mix-blend-mode: multiply;
+
+  @media screen and (min-width: $bp-m) {
+    width: 550px;
+    height: 550px;
+    top: 5vh;
+  }
 
   svg {
     width: 100%;
@@ -70,21 +123,26 @@
 }
 
 .front-sideline {
-  position: absolute;
-  left: 0;
-  transform-origin: top left;
-  transform: rotate(-90deg) translateX(-100%);
-  //top: 80vh;
-  text-align: right;
+  padding: var(--s-40) 0;
+  @media screen and (min-width: $bp-m) {
+    position: absolute;
+    left: 0;
+    transform-origin: top left;
+    transform: rotate(-90deg) translate(-100%, var(--s-40));
+    //top: 80vh;
+    text-align: right;
+  }
 }
 
 .front-date,
 .front-place {
   margin: 0;
-  @media screen and (min-width: $bp-s) {
+  font-size: var(--h-2m);
+  font-weight: 500;
+  line-height: 1.1;
+
+  @media screen and (min-width: $bp-m) {
     font-size: var(--h-2xl);
-    font-weight: 500;
-    line-height: 1;
   }
 }
 

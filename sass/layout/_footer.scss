@@ -13,14 +13,22 @@
     }
   }
 
+  .layout-inner {
+    display: flex;
+    flex-flow: column-reverse nowrap;
+  }
+  .site-totop {
+    margin-top: var(--s-40);
+  }
+
   @media screen and (min-width: $bp-m) {
     .layout-inner {
-      display: flex;
       flex-flow: row nowrap;
     }
 
     .site-totop {
       width: 8.35%;
+      margin-top: 0;
       margin-left: 8.35%;
       margin-right: 8.35%;
     }
@@ -31,7 +39,7 @@
   }
 
   .footer-group-hor {
-    @media screen and (min-width: $bp-s) {
+    @media screen and (min-width: $bp-m) {
       > div {
         display: flex;
         flex-flow: row nowrap;
@@ -40,20 +48,19 @@
       }
 
       .footer-group-elem {
-        flex-basis: 25%;
-        padding: 0 var(--s-10);
+        width: 23%;
       }
     }
   }
   .footer-group {
-    @media screen and (min-width: $bp-s) {
+    @media screen and (min-width: $bp-m) {
       padding: 0 var(--s-10);
     }
   }
 
   .footer-group-elem {
     margin-bottom: var(--s-60);
-    @media screen and (min-width: $bp-s) {
+    @media screen and (min-width: $bp-m) {
       margin-bottom: var(--s-40);
     }
   }
@@ -64,7 +71,7 @@
     letter-spacing: 0.05em;
     margin-bottom: var(--s-20);
     margin-top: 0;
-    @media screen and (min-width: $bp-s) {
+    @media screen and (min-width: $bp-m) {
       margin-bottom: var(--s-40);
     }
   }
@@ -72,6 +79,7 @@
   p {
     line-height: 1.5;
     font-size: var(--r-xs);
+    letter-spacing: 0.03em;
   }
 
   figure {
