@@ -1,0 +1,93 @@
+.hero {
+  position: absolute;
+  top: 0;
+  z-index: 9;
+}
+
+.hero-cover {
+  height: 80vh;
+  width: 100vw;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.site-frontpage {
+  position: relative;
+  margin-top: 55vh;
+
+  @media screen and (min-width: $bp-s) {
+    .front-content {
+      display: grid;
+      grid-template-columns: repeat(12, calc(100% / 12));
+      .layout-inner {
+        grid-column: 4 / span 8;
+      }
+    }
+  }
+}
+
+.front-footer {
+  @media screen and (min-width: $bp-s) {
+    display: grid;
+    grid-template-columns: repeat(12, calc(100% / 12));
+    .layout-inner {
+      width: 100%;
+      grid-column: 4 / span 8;
+    }
+    &.artists-overview {
+      .layout-inner {
+        display: block;
+      }
+    }
+  }
+}
+
+
+.artists-overview + .front-footer {
+  margin-top: -50px;
+}
+
+.front-footer {
+  margin-bottom: var(--s-90);
+}
+
+.hero-logo {
+  width: 550px;
+  height: 550px;
+  position: fixed;
+  z-index: 11;
+  top: 5vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  mix-blend-mode: multiply;
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.front-sideline {
+  position: absolute;
+  left: 0;
+  transform-origin: top left;
+  transform: rotate(-90deg) translateX(-100%);
+  //top: 80vh;
+  text-align: right;
+}
+
+.front-date,
+.front-place {
+  margin: 0;
+  @media screen and (min-width: $bp-s) {
+    font-size: var(--h-2xl);
+    font-weight: 500;
+    line-height: 1;
+  }
+}
+
+.front-date {
+  color: var(--purple2);
+}

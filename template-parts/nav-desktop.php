@@ -2,12 +2,8 @@
     <div class="site-branding">
         <?php
         the_custom_logo();
-        if ( is_front_page() && is_home() ) :
-        ?>
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                <?php get_template_part( 'design/svg', 'logo' ); ?>
-            </a></h1>
-        <?php
+        if ( is_front_page() ) :
+          // frontpage is differet :P
         else :
         ?>
             <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">

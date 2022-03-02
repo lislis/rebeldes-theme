@@ -843,6 +843,11 @@ input[type="submit"]:active {
 	text-decoration: underline !important;
 }
 
+.masthead {
+	position: relative;
+	z-index: 10;
+}
+
 .site-header .site-claim,
 .site-header .main-navigation {
 	display: none;
@@ -1916,4 +1921,104 @@ input[type="submit"]:active {
 	.site-single-artist .layout-inner h3 {
 		font-size: var(--h-xl);
 	}
+}
+
+.hero {
+	position: absolute;
+	top: 0;
+	z-index: 9;
+}
+
+.hero-cover {
+	height: 80vh;
+	width: 100vw;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.site-frontpage {
+	position: relative;
+	margin-top: 55vh;
+}
+
+@media screen and (min-width: 760px) {
+
+	.site-frontpage .front-content {
+		display: grid;
+		grid-template-columns: repeat(12, calc(100% / 12));
+	}
+
+	.site-frontpage .front-content .layout-inner {
+		grid-column: 4 / span 8;
+	}
+}
+
+@media screen and (min-width: 760px) {
+
+	.front-footer {
+		display: grid;
+		grid-template-columns: repeat(12, calc(100% / 12));
+	}
+
+	.front-footer .layout-inner {
+		width: 100%;
+		grid-column: 4 / span 8;
+	}
+
+	.front-footer.artists-overview .layout-inner {
+		display: block;
+	}
+}
+
+.artists-overview + .front-footer {
+	margin-top: -50px;
+}
+
+.front-footer {
+	margin-bottom: var(--s-90);
+}
+
+.hero-logo {
+	width: 550px;
+	height: 550px;
+	position: fixed;
+	z-index: 11;
+	top: 5vh;
+	left: 0;
+	right: 0;
+	margin: auto;
+	mix-blend-mode: multiply;
+}
+
+.hero-logo svg {
+	width: 100%;
+	height: auto;
+}
+
+.front-sideline {
+	position: absolute;
+	left: 0;
+	transform-origin: top left;
+	transform: rotate(-90deg) translateX(-100%);
+	text-align: right;
+}
+
+.front-date,
+.front-place {
+	margin: 0;
+}
+
+@media screen and (min-width: 760px) {
+
+	.front-date,
+	.front-place {
+		font-size: var(--h-2xl);
+		font-weight: 500;
+		line-height: 1;
+	}
+}
+
+.front-date {
+	color: var(--purple2);
 }

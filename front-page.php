@@ -15,12 +15,32 @@
 get_header();
 ?>
 
+<?php
+$fi = $dynamic_featured_image->get_featured_images([$post->ID]);
+$index = array_rand($fi, 1);
+//print_r($fi[$index]);
+?>
+
+<div class="hero">
+    <figure class="hero-cover" style="background-image: url(<?php echo $fi[$index]['full']; ?>)"></figure>
+    <figcaption><?php echo wp_get_attachment_caption($fi[$index]['attachment_id'] ) ?></figcaption>
+    <div class="hero-logo">
+        <h1 class=""><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+            <?php get_template_part( 'design/svg', 'logo' ); ?>
+        </a></h1>
+
+    </div>
+</div>
+
+
+
 <main id="primary" class="site-main site-frontpage">
-    <header>
-        <p><?php echo get_option('front_exhibition_date'); ?></p>
-        <p><?php echo get_option('front_exhibition_place'); ?></p>
+    <header class="front-sideline">
+        <p class="front-date"><?php echo get_option('front_exhibition_date'); ?></p>
+        <p class="front-place"><?php echo get_option('front_exhibition_place'); ?></p>
     </header>
-    <div class="layout-inner">
+    <div class="front-content">
+        <div class="layout-inner">
 
         <?php
         while ( have_posts() ) :
@@ -30,9 +50,12 @@ get_header();
 
         endwhile; // End of the loop.
         ?>
+        </div>
     </div>
 
-    <aside class="artists-overview">
+</main>
+<div>
+    <aside class="artists-overview front-footer">
         <div class="layout-inner">
             <?php
             $posts = get_posts(array('post_type' => 'rebeldes_artists')); ?>
@@ -47,26 +70,34 @@ get_header();
             </ul>
         </div>
     </aside>
+    <div class="front-footer">
 
-    <div class="layout-inner">
+        <div class="layout-inner">
+            <div>
         <?php
         if (get_option('front_catalogue')) :
         ?>
+            <div class="m-b-40">
             <a href="<?php echo get_option('front_catalogue')?>" download class="btn  btn-download">
                 <?php _e('Catalogue', 'rebeldes'); ?>
             </a>
+            </div>
         <?php endif; ?>
 
         <?php
         if (get_option('front_flyer')) :
         ?>
+            <div>
             <a href="<?php echo get_option('front_flyer')?>" download class="btn btn-download">
                 <?php _e('Flyer', 'rebeldes'); ?>
             </a>
+            </div>
         <?php endif; ?>
+            </div>
+        </div>
     </div>
-
-</main><!-- #main -->
+    </div>
+</div><!-- #main -->
 
 
 
