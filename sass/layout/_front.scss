@@ -120,6 +120,10 @@
     width: 100%;
     height: auto;
   }
+  transition: transform 200ms ease-in-out;
+  &.is-smaller {
+    transform: scale(0.4);
+  }
 }
 
 .front-sideline {

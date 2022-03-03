@@ -29,7 +29,9 @@ get_header();
         <section>
             <?php
             /* The 2nd Query (without global var) */
-            $query2 = new WP_Query( array('post_type' => 'rebeldes_curators') );
+            $query2 = new WP_Query( array('post_type' => 'rebeldes_curators',
+                                          'orderby' => 'menu_order',
+                                          'order' => 'ASC') );
 
             // The 2nd Loop
             while ( $query2->have_posts() ) {

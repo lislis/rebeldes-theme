@@ -188,3 +188,12 @@ function hide_admin_bar() {
 }
 
 require get_template_directory() . '/custom_settings.php';
+
+function fwp_archive_per_page( $query ) {
+  //if ( is_tax( 'rebeldes_artist' ) ) {
+    $query->set( 'orderby', 'menu_order' );
+    $query->set( 'order', 'ASC' );
+    //}
+}
+add_filter( 'pre_get_posts', 'fwp_archive_per_page' );
+

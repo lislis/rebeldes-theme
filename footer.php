@@ -32,5 +32,31 @@
      });
  });
 
+ document.querySelector('.totop').addEventListener('click', evt => {
+     evt.preventDefault();
+     window.scroll({top: 0, left: 0, behavior: 'smooth'});
+ });
+
+ const logo = document.querySelector('.hero-logo');
+
+ function checkLogoScale(logo) {
+     let cbr = logo.getBoundingClientRect();
+     let header = document.querySelector('.hero-cover');
+     let h_cbr = header.getBoundingClientRect();
+     if ((cbr.height * 0.75) + cbr.top > h_cbr.height + h_cbr.top) {
+         logo.classList.add('is-smaller');
+     } else {
+         logo.classList.remove('is-smaller');
+     }
+ }
+
+ if (logo) {
+     checkLogoScale(logo);
+     document.addEventListener('scroll', evt => {
+         checkLogoScale(logo);
+     });
+ }
+
+
 </script>
 </html>
