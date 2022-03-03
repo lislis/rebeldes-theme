@@ -35,7 +35,7 @@ h6 {
 
 h1, h2, h3 {
   text-transform: uppercase;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.03em;
 }
 
 .h-4xl,
@@ -46,7 +46,7 @@ h1, h2, h3 {
 .h-b-caps {
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.03em;
   line-height: 1.1;
   margin-bottom: 0.3em;
 }
@@ -109,7 +109,7 @@ h6,
 }
 .h-s-caps {
   font-size: var(--h-s);
-  letter-spacing: -0.05em;
+  letter-spacing: 0.05em;
 }
 
 .intro,
@@ -275,7 +275,7 @@ blockquote {
 .btn, input[type=submit],
 .wp-block-button__link {
   display: inline-block;
-  color: var(--purple2) !important;
+  color: var(--purple2);
   border: 2px dotted currentColor;
   border-radius: 30px;
   //border-type: inset;
@@ -288,12 +288,18 @@ blockquote {
   text-decoration: none;
   cursor: pointer;
   transition: background 160ms ease-in-out;
+  letter-spacing: 0.05em;
   &:hover,
   &:active {
     background-color: var(--purple2);
     color: var(--white) !important;
   }
 }
+
+.wp-block-button__link {
+  color: var(--purple2) !important;
+}
+
 
 .btn-dropdown,
 .dropdown .wp-block-button__link {

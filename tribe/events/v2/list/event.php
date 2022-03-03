@@ -6,7 +6,7 @@
         $end_date = date_parse($event->end_date);
         ?>
 
-        <p class="m-0 events-date"><time datetime="<?php echo $event->start_date ?>">
+        <p class="events-date"><time datetime="<?php echo $event->start_date ?>">
             <?php echo date('d/m/y', strtotime($event->start_date)); ?>
         </time></p>
 
@@ -24,12 +24,16 @@
                     </strong><br>
                 <?php endif; ?>
             <?php
-            $venue_details = tribe_get_venue_details(); ?>
+            $venue_details = tribe_get_venue_details();
+            $venue = tribe_get_venue_id();
+            $venue = get_post($venue);
+            ?>
             <span><?php echo $venue_details['linked_name'] ?></span><br>
-            <span><?php echo $venue_details['address'] ?></span>
+            <span><?php echo $venue_details['address'] ?></span><br>
+            <?php if ($venue->post_content != ''): ?><span><?php echo $venue->post_content; ?></span><?php endif; ?>
             </p>
         </div>
-        <div>
+        <div class="m-t-60">
             <button type="button" class="btn btn-dropdown js-event-accordion"><?php esc_html_e('Read more', 'rebeldes'); ?></button>
             <div class="event-accordion-body is-closed">
                 <?php echo $event->post_content; ?>
