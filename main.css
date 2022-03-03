@@ -1258,7 +1258,7 @@ blockquote p {
 
 @media screen and (min-width: 1024px) {
 	.site-footer .footer-group {
-		padding: 0 var(--s-10);
+		padding: 0;
 	}
 }
 
@@ -1451,6 +1451,7 @@ blockquote p {
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
+	font-size: var(--h-xl);
 }
 
 .site-page .rebeldes_curators .entry-image {
@@ -1461,24 +1462,39 @@ blockquote p {
 .site-page .rebeldes_curators .entry-header {
 	order: 2;
 	z-index: 2;
-	transform: translateY(-1.4em);
+	transform: translateY(-0.65em);
+	padding-left: var(--s-40);
 }
 
 .site-page .rebeldes_curators .entry-content {
 	order: 3;
 }
 
+.site-page .rebeldes_curators .entry-subtitle {
+	font-size: var(--h-l);
+	font-weight: 500;
+}
+
 @media screen and (min-width: 760px) {
 	.site-page .rebeldes_curators {
 		display: grid;
-		grid-template-rows: 240px 275px 100px 40px 1fr;
+		grid-template-rows: 240px 275px auto 40px 1fr;
 		grid-template-columns: repeat(24, 4.17%);
 		padding: 0 var(--s-10) var(--s-115);
 	}
 	.site-page .rebeldes_curators .entry-header {
-		grid-column: 9 / span 11;
+		grid-column: 9 / span 17;
 		grid-row: 2;
 		transform: translateY(0);
+		padding-left: 0;
+	}
+	.site-page .rebeldes_curators .entry-title {
+		line-height: 1;
+		font-size: var(--h-3xl);
+	}
+	.site-page .rebeldes_curators .entry-subtitle {
+		font-size: var(--h-xl);
+		font-weight: 500;
 	}
 	.site-page .rebeldes_curators .entry-content {
 		grid-column: 12 / span 11;
@@ -1487,6 +1503,12 @@ blockquote p {
 	.site-page .rebeldes_curators .entry-image {
 		grid-row: 1 / span 4;
 		grid-column: 3 / span 8;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.site-page .rebeldes_curators .entry-header {
+		grid-column: 9 / span 11;
 	}
 }
 
@@ -1536,6 +1558,7 @@ blockquote p {
 	}
 	.site-calendar .events-layout .layout-inner {
 		padding-left: 24vw;
+		padding-right: 8vw;
 	}
 }
 
@@ -1545,6 +1568,7 @@ blockquote p {
 	}
 	.site-calendar .events-layout .layout-inner {
 		padding-left: 363px;
+		padding-right: 242px;
 	}
 }
 
@@ -1764,6 +1788,7 @@ blockquote p {
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
+	line-height: 1;
 }
 
 .site-single-artist h2, .site-single-artist h3 {
@@ -1801,7 +1826,7 @@ blockquote p {
 	display: grid;
 	grid-template-columns: repeat(6, calc(100% / 6));
 	grid-template-rows: 330px 90px 1fr;
-	margin-top: -5em;
+	margin-top: -3.5em;
 }
 
 .site-single-artist .layout-inner .entry-image {
@@ -1974,8 +1999,8 @@ blockquote p {
 }
 
 .hero-description .site-description {
-	font-size: 7vw;
-	max-width: 48vw;
+	font-size: var(--h-l);
+	max-width: 6.3em;
 }
 
 @media screen and (min-width: 1024px) {
@@ -2013,6 +2038,12 @@ blockquote p {
 @media screen and (min-width: 1024px) {
 	.site-frontpage .front-content {
 		grid-column: 4 / span 8;
+	}
+}
+
+@media screen and (min-width: 1512px) {
+	.site-frontpage .front-content {
+		grid-column: 4 / span 7;
 	}
 }
 
@@ -2075,6 +2106,7 @@ blockquote p {
 
 .hero-logo.is-smaller {
 	transform: scale(0.4);
+	opacity: 0.85;
 }
 
 .front-sideline {

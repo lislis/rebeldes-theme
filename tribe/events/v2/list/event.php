@@ -33,10 +33,11 @@
             <?php if ($venue->post_content != ''): ?><span><?php echo $venue->post_content; ?></span><?php endif; ?>
             </p>
         </div>
-        <div class="m-t-60">
+
+        <div class="m-t-60 js-event-content-wrapper is-hidden">
             <button type="button" class="btn btn-dropdown js-event-accordion"><?php esc_html_e('Read more', 'rebeldes'); ?></button>
             <div class="event-accordion-body is-closed">
-                <?php echo $event->post_content; ?>
+                <div class="js-event-content"><?php echo $event->post_content; ?></div>
                 <div>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo implode('/', array_slice(explode('/', get_permalink()), 0, -2)); ?>#<?php echo $event->post_name?>" target="_blank" rel="nofollow"><?php echo esc_html_e('Share on Facebook', 'rebeldes'); ?></a>
                     <a href="https://twitter.com/intent/tweet?text=<?php echo implode('/', array_slice(explode('/', get_permalink()), 0, -2)); ?>#<?php echo $event->post_name?>" target="_blank" rel="nofollow"><?php echo esc_html_e('Share on Twitter', 'rebeldes'); ?></a>

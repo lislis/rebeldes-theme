@@ -52,6 +52,7 @@ function rebeldes_setup() {
 			'menu-1' => esc_html__( 'Primary', 'rebeldes' ),
                         'menu-2' => esc_html__('Langugae', 'rebeldes'),
                         'menu-3' => esc_html__('Secondary', 'rebeldes'),
+                        'menu-4' => esc_html__('Artistas+Curadoras', 'rebeldes'),
 		)
 	);
 
@@ -134,15 +135,26 @@ add_action( 'after_setup_theme', 'rebeldes_content_width', 0 );
 function rebeldes_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'rebeldes' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'rebeldes' ),
+			'name'          => esc_html__( 'Sidebar-ES', 'rebeldes' ),
+			'id'            => 'sidebar-es',
+			'description'   => esc_html__( 'Add footer items here.', 'rebeldes' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
 	);
+        register_sidebar(
+                         array(
+                               'name'          => esc_html__( 'Sidebar DE', 'rebeldes' ),
+                               'id'            => 'sidebar-de',
+                               'description'   => esc_html__( 'Add Footer items here.', 'rebeldes' ),
+                               'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                               'after_widget'  => '</section>',
+                               'before_title'  => '<h2 class="widget-title">',
+                               'after_title'   => '</h2>',
+                               )
+                         );
 }
 add_action( 'widgets_init', 'rebeldes_widgets_init' );
 

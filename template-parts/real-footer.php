@@ -1,4 +1,3 @@
-
 <footer class="site-footer">
     <div class="layout-inner">
         <div class="site-totop">
@@ -8,8 +7,15 @@
                 </svg>
             </a>
         </div>
-        <?php
-        get_sidebar();
-        get_footer(); ?>
+        <div class="widget-area">
+            <?php
+            if (pll_current_language() == 'de') {
+                dynamic_sidebar('sidebar-de');
+            } else {
+                dynamic_sidebar('sidebar-es');
+            }
+             ?>
+        </div>
+        <?php get_footer(); ?>
     </div>
 </footer>

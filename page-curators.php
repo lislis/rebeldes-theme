@@ -44,8 +44,8 @@ get_header();
             wp_reset_postdata();
             ?>
         </section>
-
     </div>
+    <?php get_template_part( 'template-parts/artists', 'overview' ); ?>
 </main><!-- #main -->
 
 <?php get_template_part( 'template-parts/real', 'footer' ); ?>

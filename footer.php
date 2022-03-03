@@ -37,8 +37,8 @@
      window.scroll({top: 0, left: 0, behavior: 'smooth'});
  });
 
+ // front page
  const logo = document.querySelector('.hero-logo');
-
  function checkLogoScale(logo) {
      let cbr = logo.getBoundingClientRect();
      let header = document.querySelector('.hero-cover');
@@ -55,6 +55,25 @@
      document.addEventListener('scroll', evt => {
          checkLogoScale(logo);
      });
+ }
+
+ // calendar
+ const ew = document.querySelectorAll('.js-event-content-wrapper');
+ if (ew && ew.length) {
+     var COMMENT_PSEUDO_COMMENT_OR_LT_BANG = new RegExp(
+         '<!--[\\s\\S]*?(?:-->)?'
+         + '<!---+>?'  // A comment with no body
+         + '|<!(?![dD][oO][cC][tT][yY][pP][eE]|\\[CDATA\\[)[^>]*>?'
+         + '|<[?][^>]*>?',  // A pseudo-comment
+         'g');
+
+     const ec = document.querySelectorAll('.js-event-content');
+     ec.forEach((e, i) => {
+         let new_inner = e.innerHTML.replaceAll(COMMENT_PSEUDO_COMMENT_OR_LT_BANG, '').replaceAll('\n', '');
+         if (new_inner !== '') {
+             e.parentElement.parentElement.classList.remove('is-hidden');
+         }
+     })
  }
 
 

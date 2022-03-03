@@ -35,8 +35,8 @@
   top: 0.2rem;
   right: 0;
   .site-description {
-    font-size: 7vw;
-    max-width: 48vw;
+    font-size: var(--h-l);
+    max-width: 6.3em;
   }
   @media screen and (min-width: $bp-m) {
     display: none;
@@ -69,6 +69,9 @@
 
     @media screen and (min-width: $bp-m) {
       grid-column: 4 / span 8;
+    }
+    @media screen and (min-width: $bp-l) {
+      grid-column: 4 / span 7;
     }
   }
 
@@ -110,6 +113,7 @@
   margin: auto;
   mix-blend-mode: multiply;
 
+
   @media screen and (min-width: $bp-m) {
     width: 550px;
     height: 550px;
@@ -123,6 +127,7 @@
   transition: transform 200ms ease-in-out;
   &.is-smaller {
     transform: scale(0.4);
+    opacity: 0.85;
   }
 }
 

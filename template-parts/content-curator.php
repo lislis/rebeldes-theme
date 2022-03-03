@@ -9,9 +9,9 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="<?php echo $post->post_name; ?>" <?php post_class(); ?>>
     <header class="entry-header">
-	<?php the_title( '<h1 class="h-3xl entry-title">', '</h1>' ); ?>
+	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
     </header><!-- .entry-header -->
 
     <div class="entry-image">
@@ -19,15 +19,10 @@
     </div>
 
     <div class="entry-content">
-        <p class="h-xl m-0 lh-1"><?php echo get_post_meta(get_the_ID(), 'title', true); ?></p>
-        <p class="h-b-caps m-0"><?php echo get_post_meta(get_the_ID(), 'living', true); ?></p>
-
-
+        <p class="entry-subtitle m-0 lh-1"><?php echo get_post_meta(get_the_ID(), 'title', true); ?></p>
 	<?php
 	the_content();
 	?>
     </div><!-- .entry-content -->
 
-</article><!-- #post-<?php the_ID(); ?> -->
-
-    
+</div><!-- #post-<?php the_ID(); ?> -->
