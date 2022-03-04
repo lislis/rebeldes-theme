@@ -110,7 +110,7 @@ function rebeldes_setup() {
         add_image_size( 'spalten-4-port', 497, 688, true ); // Hard crop left top
         add_image_size( 'spalten-2.5', 307, 421, array( 'center', 'center' ) ); // Hard crop left top
 
-        add_image_size( 'artist-teaser', 900, 1050, true); // Hard crop left top
+        add_image_size( 'artist-teaser', 900, 1050);
         add_image_size( 'artist-big', 1458, 2058, true);
 }
 add_action( 'after_setup_theme', 'rebeldes_setup' );
