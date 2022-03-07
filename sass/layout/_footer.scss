@@ -42,9 +42,18 @@
     @media screen and (min-width: $bp-m) {
       > div {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         align-items: flex-start;
         justify-content: space-between;
+      }
+
+      .footer-group-elem {
+        width: 49%;
+      }
+    }
+    @media screen and (min-width: $bp-l) {
+      > div {
+        flex-flow: row nowrap;
       }
 
       .footer-group-elem {

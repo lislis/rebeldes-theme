@@ -27,12 +27,14 @@
 	    );
 	    ?>
             <?php
-	    wp_nav_menu(
-	        array(
-		    'theme_location' => 'menu-2',
-		    'menu_id'        => 'language-menu-2'
-	        )
-	    );
+	    if ( has_nav_menu( 'menu-2' ) ) {
+              wp_nav_menu(
+                          array(
+                                'theme_location' => 'menu-2',
+                                'menu_id'        => 'language-menu',
+                                )
+                          );
+            }
 	    ?>
 
         </nav>

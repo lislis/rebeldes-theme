@@ -3,7 +3,7 @@
         <?php
         the_custom_logo();
         if ( is_front_page() ) :
-          // frontpage is differet :P
+        // frontpage is differet :P
         else :
         ?>
             <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -17,21 +17,23 @@
 
     <div class="site-claim">
         <div class="site-description-wrapper">
-        <?php $rebeldes_description = get_bloginfo( 'description', 'display' );
-        if ( $rebeldes_description || is_customize_preview() ) :
-        ?>
-            <p class="site-description"><?php echo $rebeldes_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-        <?php endif; ?>
+            <?php $rebeldes_description = get_bloginfo( 'description', 'display' );
+            if ( $rebeldes_description || is_customize_preview() ) :
+            ?>
+                <p class="site-description"><?php echo $rebeldes_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+            <?php endif; ?>
         </div>
 
         <nav id="site-language" class="language-navigation">
             <?php
-            wp_nav_menu(
-                array(
-                    'theme_location' => 'menu-2',
-                    'menu_id'        => 'language-menu',
-                )
-            );
+            if ( has_nav_menu( 'menu-2' ) ) {
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'menu-2',
+                        'menu_id'        => 'language-menu',
+                    )
+                );
+            }
             ?>
         </nav>
     </div>

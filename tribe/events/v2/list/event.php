@@ -8,6 +8,10 @@
 
         <p class="events-date"><time datetime="<?php echo $event->start_date ?>">
             <?php echo date('d/m/y', strtotime($event->start_date)); ?>
+            <?php
+            $start = date('d/m/y', strtotime($event->start_date));
+            $end = date('d/m/y', strtotime($event->end_date));
+            if ($start != $end) { echo " - " . date('d/m/y', strtotime($event->end_date)); } ?>
         </time></p>
 
         <h2 class="events-item-title"><?php echo $event->post_title; ?></h2>
@@ -18,6 +22,9 @@
         <div class="event-venue">
             <p class="r-s">
                 <?php if ($event->start_date): ?>
+                    <?php if ($start != $end) : ?>
+                    <strong><?php echo $start . " - " . $end; ?></strong><br>
+                    <?php endif; ?>
                     <strong>
                         <?php echo date('H:i', strtotime($event->start_date)); ?>-
                         <?php echo date('H:i', strtotime($event->end_date)); ?>

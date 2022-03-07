@@ -2,32 +2,30 @@
   position: absolute;
   top: 0;
   width: 100vw;
-  //height: 100vh;
   z-index: 9;
-  display: grid;
-
-  grid-template-rows: 100vh auto;
-  padding: 0 0.5rem;
+  padding: 0;
 
   @media screen and (min-width: $bp-m) {
-    grid-template-columns: repeat(12, calc(100% / 12));
-    grid-template-rows: 85vh auto;
-    //height: 85vh;
+    figcaption {
+      padding-left: 25%;
+    }
   }
-
-  figcaption {
-    grid-column: 4 / span 8;
-    grid-row: 2;
+  @media screen and (min-width: $bp-l) {
+    figcaption {
+      padding-left: 368px;
+    }
   }
 }
 
 .hero-cover {
-  grid-column: 1 / span 12;
-  grid-row: 1;
+  height: 100vh;
   margin: 0 -0.5rem;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  @media screen and (min-width: $bp-m) {
+    height:  85vh;
+  }
 }
 
 .hero-description {
@@ -50,10 +48,6 @@
   @media screen and (min-width: $bp-m) {
     margin-top: calc(92vh - 300px);
   }
-  @media screen and (min-width: $bp-l) {
-    //margin-top: 70vh;
-  }
-
   > .layout-inner {
     position: relative;
     @media screen and (min-width: $bp-m) {
@@ -61,7 +55,6 @@
       grid-template-columns: repeat(12, calc(100% / 12));
     }
   }
-
   .front-content {
     p:first-of-type {
       margin-top: 0;
@@ -113,7 +106,6 @@
   margin: auto;
   mix-blend-mode: multiply;
 
-
   @media screen and (min-width: $bp-m) {
     width: 550px;
     height: 550px;
@@ -124,9 +116,9 @@
     width: 100%;
     height: auto;
   }
-  transition: transform 200ms ease-in-out;
+  transition: transform 200ms linear;
   &.is-smaller {
-    transform: scale(0.4);
+    //transform: scale(0.4);
     opacity: 0.85;
   }
 }
@@ -138,7 +130,6 @@
     left: 0;
     transform-origin: top left;
     transform: rotate(-90deg) translate(-100%, var(--s-40));
-    //top: 80vh;
     text-align: right;
   }
 }

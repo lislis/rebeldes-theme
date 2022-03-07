@@ -110,7 +110,7 @@ function rebeldes_setup() {
         add_image_size( 'spalten-4-port', 497, 688, true ); // Hard crop left top
         add_image_size( 'spalten-2.5', 307, 421, array( 'center', 'center' ) ); // Hard crop left top
 
-        add_image_size( 'artist-teaser', 900, 1050);
+        add_image_size( 'artist-teaser', 900, 1050, true);
         add_image_size( 'artist-big', 1458, 2058, true);
 }
 add_action( 'after_setup_theme', 'rebeldes_setup' );
@@ -166,12 +166,8 @@ function rebeldes_scripts() {
         wp_enqueue_style( 'rebeldes-main-style', get_template_directory_uri() . '/main.css', array(), _S_VERSION );
         
 	wp_style_add_data( 'rebeldes-style', 'rtl', 'replace' );
+        wp_enqueue_script( 'rebeldes-script', get_template_directory_uri() . '/js/rebeldes.js', array(), _S_VERSION, true );
 
-	wp_enqueue_script( 'rebeldes-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'rebeldes_scripts' );
 

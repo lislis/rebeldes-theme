@@ -22,9 +22,11 @@ $index = array_rand($fi, 1);
 
 <div class="hero">
     <figure class="hero-cover" style="background-image: url(<?php echo $fi[$index]['full']; ?>)"></figure>
-    <figcaption>
-        <?php echo wp_get_attachment_caption($fi[$index]['attachment_id'] ) ?>
-    </figcaption>
+    <div class="layout-inner">
+        <figcaption>
+            <?php echo wp_get_attachment_caption($fi[$index]['attachment_id'] ) ?>
+        </figcaption>
+    </div>
 
     <div class="hero-description">
         <?php $rebeldes_description = get_bloginfo( 'description', 'display' );
