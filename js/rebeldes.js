@@ -9,15 +9,28 @@ document.querySelector('#menu-toggle')
 
 document.querySelectorAll('.js-event-accordion').forEach((el, i) => {
   el.addEventListener('click', (evt) => {
-    evt.target.classList.toggle('is-open');
-    evt.target.nextElementSibling.classList.toggle('is-closed');
-
+    //if (acc)
+    let targ = evt.target;
+    if (evt.target.nodeName == "SPAN") {
+      targ = evt.target.parentElement;
+    }
+    const acc = document.querySelector(`#${targ.dataset.toggle}`);
+    acc.classList.toggle('is-closed');
+    const otherbtn = document.querySelectorAll(`[data-toggle=${targ.dataset.toggle}]`);
+    otherbtn.forEach(x => x.classList.toggle('is-open'));
   });
 });
 
 document.querySelector('.totop').addEventListener('click', evt => {
   evt.preventDefault();
   window.scroll({top: 0, left: 0, behavior: 'smooth'});
+});
+
+let wpImages = document.querySelectorAll('main img');
+new simpleParallax(wpImages, {
+  scale: 1.2,
+  delay: 0.1,
+  transition: 'cubic-bezier(0,0,0,1)'
 });
 
 
@@ -38,11 +51,8 @@ function checkLogoScale(logo) {
   if (percent >= 1.0) {
     percent = 1;
   }
-
   // 0.4 is what i want in css
   let scale = 1 - (0.6 * percent);
-
-  console.log(scale, percent );
 
   logo.style.transform = `scale(${scale})`;
 

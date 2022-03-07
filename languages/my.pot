@@ -1,0 +1,420 @@
+# Copyright (C) 2022 lislis
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: rebeldes 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/rebeldes\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-03-07T16:09:39+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: rebeldes\n"
+
+#. Theme Name of the theme
+msgid "rebeldes"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "http://underscores.me/"
+msgstr ""
+
+#. Description of the theme
+msgid "Theme for Rebeldes, design by zoff-kollektiv.net"
+msgstr ""
+
+#. Author of the theme
+msgid "lislis"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://lislis.xyz"
+msgstr ""
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:30
+msgid "Most Used Categories"
+msgstr ""
+
+#. translators: %1$s: smiley
+#: 404.php:48
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#. translators: 1: title.
+#: comments.php:35
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:41
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:68
+msgid "Comments are closed."
+msgstr ""
+
+#: front-page.php:74
+msgid "Catalogue"
+msgstr ""
+
+#: front-page.php:83
+msgid "Flyer"
+msgstr ""
+
+#: functions.php:52
+msgid "Primary"
+msgstr ""
+
+#: functions.php:53
+msgid "Langugae"
+msgstr ""
+
+#: functions.php:54
+msgid "Secondary"
+msgstr ""
+
+#: functions.php:55
+msgid "Artistas+Curadoras"
+msgstr ""
+
+#: functions.php:138
+msgid "Sidebar-ES"
+msgstr ""
+
+#: functions.php:140
+msgid "Add footer items here."
+msgstr ""
+
+#: functions.php:149
+msgid "Sidebar DE"
+msgstr ""
+
+#: functions.php:151
+msgid "Add Footer items here."
+msgstr ""
+
+#: header.php:36
+msgid "Skip to content"
+msgstr ""
+
+#. translators: %s: post date.
+#: inc/template-tags.php:30
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#. translators: %s: post author.
+#: inc/template-tags.php:46
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:63
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: inc/template-tags.php:66
+msgid "Posted in %1$s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:70
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:73
+msgid "Tagged %1$s"
+msgstr ""
+
+#. translators: %s: post title
+#: inc/template-tags.php:83
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:100
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Curadoras"
+msgstr ""
+
+#: post_types/artists.php:8
+msgctxt "Post type general name"
+msgid "Artists"
+msgstr ""
+
+#: post_types/artists.php:9
+msgctxt "Post type singular name"
+msgid "Artist"
+msgstr ""
+
+#: post_types/artists.php:10
+msgctxt "Admin Menu text"
+msgid "Artists"
+msgstr ""
+
+#: post_types/artists.php:11
+msgctxt "Add New on Toolbar"
+msgid "Artist"
+msgstr ""
+
+#: post_types/artists.php:12
+#: post_types/artists.php:14
+msgid "New Artist"
+msgstr ""
+
+#: post_types/artists.php:13
+msgid "Add new Artist"
+msgstr ""
+
+#: post_types/artists.php:15
+msgid "Edit Artist"
+msgstr ""
+
+#: post_types/artists.php:16
+msgid "View Artist"
+msgstr ""
+
+#: post_types/artists.php:17
+msgid "All Artists"
+msgstr ""
+
+#: post_types/artists.php:18
+msgid "Search Artists"
+msgstr ""
+
+#: post_types/artists.php:19
+#: post_types/curator.php:19
+msgid "Parents:"
+msgstr ""
+
+#: post_types/artists.php:20
+msgid "No Artists found."
+msgstr ""
+
+#: post_types/artists.php:21
+msgid "No Artists found in trash."
+msgstr ""
+
+#: post_types/artists.php:22
+msgctxt "Overrides the “Featured Image” phrase for this post type. Added in 4.3"
+msgid "Artist Cover Image"
+msgstr ""
+
+#: post_types/artists.php:23
+#: post_types/curator.php:23
+msgctxt "Overrides the “Set featured image” phrase for this post type. Added in 4.3"
+msgid "Set cover image"
+msgstr ""
+
+#: post_types/artists.php:24
+#: post_types/curator.php:24
+msgctxt "Overrides the “Remove featured image” phrase for this post type. Added in 4.3"
+msgid "Remove cover image"
+msgstr ""
+
+#: post_types/artists.php:25
+#: post_types/curator.php:25
+msgctxt "Overrides the “Use as featured image” phrase for this post type. Added in 4.3"
+msgid "Use as cover image"
+msgstr ""
+
+#: post_types/artists.php:26
+msgctxt "The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4"
+msgid "Artist archives"
+msgstr ""
+
+#: post_types/artists.php:27
+#: post_types/curator.php:27
+msgctxt "Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4"
+msgid "Insert"
+msgstr ""
+
+#: post_types/artists.php:28
+msgctxt "Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4"
+msgid "Upload to this Artist"
+msgstr ""
+
+#: post_types/artists.php:29
+msgctxt "Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
+msgid "Filter Artist list"
+msgstr ""
+
+#: post_types/artists.php:30
+msgctxt "Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
+msgid "Artist list navigation"
+msgstr ""
+
+#: post_types/artists.php:31
+msgctxt "Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4"
+msgid "Artist list"
+msgstr ""
+
+#: post_types/curator.php:8
+msgctxt "Post type general name"
+msgid "Curators"
+msgstr ""
+
+#: post_types/curator.php:9
+msgctxt "Post type singular name"
+msgid "Curator"
+msgstr ""
+
+#: post_types/curator.php:10
+msgctxt "Admin Menu text"
+msgid "Curators"
+msgstr ""
+
+#: post_types/curator.php:11
+msgctxt "Add New on Toolbar"
+msgid "Curator"
+msgstr ""
+
+#: post_types/curator.php:12
+#: post_types/curator.php:14
+msgid "New Curator"
+msgstr ""
+
+#: post_types/curator.php:13
+msgid "Add new Curator"
+msgstr ""
+
+#: post_types/curator.php:15
+msgid "Edit Curator"
+msgstr ""
+
+#: post_types/curator.php:16
+msgid "View Curator"
+msgstr ""
+
+#: post_types/curator.php:17
+msgid "All Curators"
+msgstr ""
+
+#: post_types/curator.php:18
+msgid "Search Curators"
+msgstr ""
+
+#: post_types/curator.php:20
+msgid "No Curators found."
+msgstr ""
+
+#: post_types/curator.php:21
+msgid "No Curators found in trash."
+msgstr ""
+
+#: post_types/curator.php:22
+msgctxt "Overrides the “Featured Image” phrase for this post type. Added in 4.3"
+msgid "Curator Cover Image"
+msgstr ""
+
+#: post_types/curator.php:26
+msgctxt "The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4"
+msgid "Curator archives"
+msgstr ""
+
+#: post_types/curator.php:28
+msgctxt "Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4"
+msgid "Upload to this Curator"
+msgstr ""
+
+#: post_types/curator.php:29
+msgctxt "Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4"
+msgid "Filter Curator list"
+msgstr ""
+
+#: post_types/curator.php:30
+msgctxt "Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4"
+msgid "Curator list navigation"
+msgstr ""
+
+#: post_types/curator.php:31
+msgctxt "Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4"
+msgid "Curator list"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:21
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:23
+msgid "Previous:"
+msgstr ""
+
+#: single.php:24
+msgid "Next:"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:24
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:40
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content.php:53
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/nav-mobile.php:55
+msgid "Artists"
+msgstr ""
+
+#: template-parts/nav-mobile.php:76
+msgid "Mobile Menu"
+msgstr ""
+
+#: tribe/events/v2/list.php:29
+msgid "Events"
+msgstr ""
+
+#: tribe/events/v2/list.php:49
+msgid "Past events"
+msgstr ""
+
+#: tribe/events/v2/list/event.php:46
+#: tribe/events/v2/list/event.php:52
+msgid "Read more"
+msgstr ""
+
+#: tribe/events/v2/list/event.php:47
+#: tribe/events/v2/list/event.php:53
+msgid "Read less"
+msgstr ""
+
+#: tribe/events/v2/list/event.php:55
+msgid "Share on Facebook"
+msgstr ""
+
+#: tribe/events/v2/list/event.php:56
+msgid "Share on Twitter"
+msgstr ""

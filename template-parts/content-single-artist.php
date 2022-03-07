@@ -5,8 +5,7 @@
 
         </header><!-- .entry-header -->
         <div class="entry-image">
-            <figure style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(), 'spalte-4-port'); ?>)">
-            </figure>
+            <?php echo get_the_post_thumbnail(get_the_ID(), 'artist-teaser'); ?>
             <figcaption><?php echo get_the_post_thumbnail_caption(get_the_ID()); ?></figcaption>
         </div>
 

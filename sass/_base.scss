@@ -245,12 +245,30 @@ p {
   margin-bottom: 1.5em;
 }
 
-img,
-iframe,
-object {
-  display: block;
-  width: 100%;
-  height: auto;
+main {
+  img,
+  iframe,
+  object {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  figure.wp-block-image figcaption,
+  figure.wp-block-image + figcaption {
+    text-align: left !important;
+    width: 75%;
+    padding-left: var(--s-20);
+  }
+  figure.wp-block-image + figcaption {
+    margin-top: 0;
+  }
+  figure.wp-block-image {
+    margin-bottom: 0;
+  }
+}
+.wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image) {
+  margin-bottom: var(--s-10);
 }
 
 iframe {
@@ -265,9 +283,12 @@ figure {
 blockquote {
   margin: 0 0 0.5em 0;
 
-  p {
+  p{
     margin: 0;
     line-height: 1.4;
+  }
+  cite {
+    font-size: var(--r-s);
   }
 }
 

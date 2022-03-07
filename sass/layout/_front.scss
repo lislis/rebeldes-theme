@@ -4,6 +4,9 @@
   width: 100vw;
   z-index: 9;
   padding: 0;
+  figcaption {
+    margin-top: var(--s-10);
+  }
 
   @media screen and (min-width: $bp-m) {
     figcaption {
@@ -46,7 +49,7 @@
   margin-top: 100vh;
 
   @media screen and (min-width: $bp-m) {
-    margin-top: calc(92vh - 300px);
+    margin-top: calc(97vh - 300px);
   }
   > .layout-inner {
     position: relative;
@@ -109,7 +112,7 @@
   @media screen and (min-width: $bp-m) {
     width: 550px;
     height: 550px;
-    top: 5vh;
+    top: 9vh;
   }
 
   svg {

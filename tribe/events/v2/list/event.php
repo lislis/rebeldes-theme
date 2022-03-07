@@ -42,10 +42,16 @@
         </div>
 
         <div class="m-t-60 js-event-content-wrapper is-hidden">
-            <button type="button" class="btn btn-dropdown js-event-accordion"><?php esc_html_e('Read more', 'rebeldes'); ?></button>
-            <div class="event-accordion-body is-closed">
+            <button type="button" data-toggle="event-accordion-<?php echo the_ID(); ?>" class="btn btn-dropdown js-event-accordion">
+                <span class="js-more"><?php esc_html_e('Read more', 'rebeldes'); ?></span>
+                <span class="js-less" aria-hidden="true"><?php esc_html_e('Read less', 'rebeldes'); ?></span>
+            </button>
+            <div class="event-accordion-body is-closed" id="event-accordion-<?php echo the_ID(); ?>">
                 <div class="js-event-content"><?php echo $event->post_content; ?></div>
-                <div>
+                <button type="button" data-toggle="event-accordion-<?php echo the_ID(); ?>" class="btn btn-dropdown js-event-accordion">
+                    <span class="js-more"><?php esc_html_e('Read more', 'rebeldes'); ?></span>
+                    <span class="js-less" aria-hidden="true"><?php esc_html_e('Read less', 'rebeldes'); ?></span></button>
+                <div class="m-t-40">
                     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo implode('/', array_slice(explode('/', get_permalink()), 0, -2)); ?>#<?php echo $event->post_name?>" target="_blank" rel="nofollow"><?php echo esc_html_e('Share on Facebook', 'rebeldes'); ?></a>
                     <a href="https://twitter.com/intent/tweet?text=<?php echo implode('/', array_slice(explode('/', get_permalink()), 0, -2)); ?>#<?php echo $event->post_name?>" target="_blank" rel="nofollow"><?php echo esc_html_e('Share on Twitter', 'rebeldes'); ?></a>
                 </div>

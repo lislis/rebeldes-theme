@@ -1,6 +1,5 @@
 .site-page {
   .rebeldes_curators {
-
     .entry-title {
       margin: 0;
       background: var(--gradient5);
@@ -16,11 +15,9 @@
     .entry-image {
       order: 1;
       z-index: 1;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      height: 570px;
+      overflow: hidden;
     }
+
     .entry-header {
       order: 2;
       z-index: 2;
@@ -36,10 +33,9 @@
       font-weight: 500;
     }
 
-
     @media screen and (min-width: $bp-s) {
       display: grid;
-      grid-template-rows: 280px auto 40px 1fr;
+      grid-template-rows: 280px auto 34px 1fr;
       grid-template-columns: repeat(24, 4.17%);
       padding: 0 var(--s-10) var(--s-115);
 
@@ -56,7 +52,7 @@
         font-size: var(--h-3xl);
       }
       .entry-subtitle {
-        font-size: var(--h-xl);
+        font-size: var(--h-l);
         font-weight: 500;
       }
 

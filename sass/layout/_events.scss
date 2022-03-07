@@ -95,6 +95,29 @@
     }
   }
 
+  .js-event-accordion {
+    .js-less {
+      display: none;
+    }
+    .js-more {
+      display: inline-block;
+    }
+    &.is-open {
+      background-color: var(--purple2);
+      color: var(--white);
+      .js-less {
+        display: inline-block;
+      }
+      .js-more {
+        display: none;
+      }
+      &:after {
+        background-image: url(/wp-content/themes/rebeldes/assets/icons/drop-white.svg);
+      }
+    }
+  }
+
+
   .events-past {
     color: #5B5B5B;
     .events-divider {
@@ -110,7 +133,8 @@
         background-image: url(/wp-content/themes/rebeldes/assets/icons/drop-grey.svg);
       }
       &:hover,
-      &:active {
+      &:active,
+      &.is-open {
         background-color: #5B5B5B;
         color: var(--white);
         &:after {

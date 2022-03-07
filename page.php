@@ -30,4 +30,3 @@ get_header();
 </main><!-- #main -->
 
 <?php get_template_part( 'template-parts/real', 'footer' ); ?>
-

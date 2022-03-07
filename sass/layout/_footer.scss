@@ -69,6 +69,7 @@
 
   .footer-group-elem {
     margin-bottom: var(--s-60);
+
     @media screen and (min-width: $bp-m) {
       margin-bottom: var(--s-40);
     }
@@ -91,14 +92,6 @@
     letter-spacing: 0.03em;
   }
 
-  figure {
-    img {
-      display: inline-block;
-      height: 57px;
-      width: auto;
-    }
-  }
-
   .footer-logos {
     .wp-block-group__inner-container{
       display: flex;
@@ -107,6 +100,11 @@
     }
     figure {
       margin-right: var(--s-60);
+      img {
+        display: inline-block;
+        height: 57px;
+        width: auto;
+      }
     }
   }
 

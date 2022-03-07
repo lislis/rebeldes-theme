@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.0.1' );
 }
 
 /**
@@ -166,7 +166,9 @@ function rebeldes_scripts() {
         wp_enqueue_style( 'rebeldes-main-style', get_template_directory_uri() . '/main.css', array(), _S_VERSION );
         
 	wp_style_add_data( 'rebeldes-style', 'rtl', 'replace' );
-        wp_enqueue_script( 'rebeldes-script', get_template_directory_uri() . '/js/rebeldes.js', array(), _S_VERSION, true );
+        wp_enqueue_script( 'parallax-script', get_template_directory_uri() . '/js/parallax.js', array(), _S_VERSION, true );
+        wp_enqueue_script( 'rebeldes-script', get_template_directory_uri() . '/js/rebeldes.js', array('parallax-script'), _S_VERSION, true );
+        
 
 }
 add_action( 'wp_enqueue_scripts', 'rebeldes_scripts' );
