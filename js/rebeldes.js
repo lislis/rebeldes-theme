@@ -7,6 +7,15 @@ document.querySelector('#menu-toggle')
     document.querySelector('.site-branding .site-title')?.classList.toggle('is-fadeout');
   });
 
+document.querySelectorAll('.mobile-secondary-navigation a').forEach(v => {
+  v.addEventListener('click', evt => {
+    //evt.target
+    //debugger
+    document.querySelector('#menu-toggle').click();
+  });
+});
+
+
 document.querySelectorAll('.js-event-accordion').forEach((el, i) => {
   el.addEventListener('click', (evt) => {
     //if (acc)
@@ -26,21 +35,12 @@ document.querySelector('.totop').addEventListener('click', evt => {
   window.scroll({top: 0, left: 0, behavior: 'smooth'});
 });
 
-let wpImages = document.querySelectorAll('main img');
-new simpleParallax(wpImages, {
-  scale: 1.2,
-  delay: 0.1,
-  transition: 'cubic-bezier(0,0,0,1)'
-});
-
-
-
 
 // front page
 const logo = document.querySelector('.hero-logo');
 function checkLogoScale(logo) {
   let cbr = logo.getBoundingClientRect();
-  let header = document.querySelector('.hero-cover');
+  let header = document.querySelector('.hero');
   let h_cbr = header.getBoundingClientRect();
   let w_scroll = window.scrollY;
 

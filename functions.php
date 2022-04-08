@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.1' );
+	define( '_S_VERSION', '1.0.2' );
 }
 
 /**
@@ -110,8 +110,9 @@ function rebeldes_setup() {
         add_image_size( 'spalten-4-port', 497, 688, true ); // Hard crop left top
         add_image_size( 'spalten-2.5', 307, 421, array( 'center', 'center' ) ); // Hard crop left top
 
-        add_image_size( 'artist-teaser', 900, 1050, true);
-        add_image_size( 'artist-big', 1458, 2058, true);
+        add_image_size( 'artist-teaser', 600, 700, true);
+        add_image_size( 'curadora-teaser', 918, 1320, true);
+        add_image_size( 'artist-big', 994, 1376, true);
 }
 add_action( 'after_setup_theme', 'rebeldes_setup' );
 
@@ -166,8 +167,13 @@ function rebeldes_scripts() {
         wp_enqueue_style( 'rebeldes-main-style', get_template_directory_uri() . '/main.css', array(), _S_VERSION );
         
 	wp_style_add_data( 'rebeldes-style', 'rtl', 'replace' );
-        wp_enqueue_script( 'parallax-script', get_template_directory_uri() . '/js/parallax.js', array(), _S_VERSION, true );
-        wp_enqueue_script( 'rebeldes-script', get_template_directory_uri() . '/js/rebeldes.js', array('parallax-script'), _S_VERSION, true );
+
+        if (!is_page_template('page-registro.php')) {
+          wp_enqueue_script( 'parallax-script', get_template_directory_uri() . '/js/parallax.js', array(), _S_VERSION, true );
+          wp_enqueue_script( 'parallax-init', get_template_directory_uri() . '/js/parallax-init.js', array('parallax-script'), _S_VERSION, true );
+        }
+        
+        wp_enqueue_script( 'rebeldes-script', get_template_directory_uri() . '/js/rebeldes.js', array(), _S_VERSION, true );
         
 
 }
