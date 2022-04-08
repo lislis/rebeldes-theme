@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: rebeldes 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/rebeldes\n"
-"POT-Creation-Date: 2022-03-07T16:09:39+01:00\n"
-"PO-Revision-Date: 2022-03-07 16:18+0100\n"
+"POT-Creation-Date: 2022-03-09T16:28:44+01:00\n"
+"PO-Revision-Date: 2022-03-09 16:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -72,13 +72,13 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: front-page.php:74
+#: front-page.php:69
 msgid "Catalogue"
-msgstr ""
+msgstr "Katalog"
 
-#: front-page.php:83
+#: front-page.php:78
 msgid "Flyer"
-msgstr ""
+msgstr "Flyer"
 
 #: functions.php:52
 msgid "Primary"
@@ -96,25 +96,25 @@ msgstr ""
 msgid "Artistas+Curadoras"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:139
 msgid "Sidebar-ES"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:141
 msgid "Add footer items here."
 msgstr ""
 
-#: functions.php:149
+#: functions.php:150
 msgid "Sidebar DE"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:152
 msgid "Add Footer items here."
 msgstr ""
 
 #: header.php:36
 msgid "Skip to content"
-msgstr ""
+msgstr "Zum Inhalt springen"
 
 #. translators: %s: post date.
 #: inc/template-tags.php:30
@@ -161,6 +161,10 @@ msgstr ""
 
 #. Template Name of the theme
 msgid "Curadoras"
+msgstr "Kurator*innnen"
+
+#. Template Name of the theme
+msgid "Registro"
 msgstr ""
 
 #: post_types/artists.php:8
@@ -412,7 +416,7 @@ msgstr ""
 
 #: template-parts/nav-mobile.php:55
 msgid "Artists"
-msgstr ""
+msgstr "Künstler*innen"
 
 #: template-parts/nav-mobile.php:76
 msgid "Mobile Menu"

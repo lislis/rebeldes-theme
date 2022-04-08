@@ -20,14 +20,8 @@ $fi = $dynamic_featured_image->get_featured_images([$post->ID]);
 $index = array_rand($fi, 1);
 ?>
 
-<div class="hero">
-    <figure class="hero-cover" style="background-image: url(<?php echo $fi[$index]['full']; ?>)"></figure>
-    <div class="layout-inner">
-        <figcaption>
-            <?php echo wp_get_attachment_caption($fi[$index]['attachment_id'] ) ?>
-        </figcaption>
-    </div>
-
+<div>
+    <div class="hero" style="background-image: url(<?php echo $fi[$index]['full']; ?>)">
     <div class="hero-description">
         <?php $rebeldes_description = get_bloginfo( 'description', 'display' );
         if ( $rebeldes_description || is_customize_preview() ) :
@@ -44,7 +38,7 @@ $index = array_rand($fi, 1);
 
     </div>
 </div>
-
+</div>
 <main id="primary" class="site-main site-frontpage">
     <div class="layout-inner">
         <div class="front-content">
@@ -65,11 +59,12 @@ $index = array_rand($fi, 1);
 
     <?php get_template_part( 'template-parts/artists', 'overview' ); ?>
 
+    <?php if (get_option('front_catalogue') || get_option('front_flyer')) : ?>
     <div class="layout-inner">
         <div class="front-content front-footer">
             <?php
             if (get_option('front_catalogue')) : ?>
-                <div class="m-b-40">
+                <div class="m-b-20">
                     <a href="<?php echo get_option('front_catalogue')?>" download class="btn  btn-download">
                         <?php _e('Catalogue', 'rebeldes'); ?>
                     </a>
@@ -86,6 +81,7 @@ $index = array_rand($fi, 1);
             <?php endif; ?>
         </div>
     </div>
+    <?php endif; ?>
 </div>
 </main>
 

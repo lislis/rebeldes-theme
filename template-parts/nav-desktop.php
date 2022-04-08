@@ -6,7 +6,7 @@
         // frontpage is differet :P
         else :
         ?>
-            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php wp_title(''); ?>">
                 <?php get_template_part( 'design/svg', 'logo' ); ?>
             </a></p>
         <?php

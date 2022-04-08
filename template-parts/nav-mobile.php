@@ -1,7 +1,7 @@
 <div class="site-header-mobile-wrapper">
     <div class="site-header-mobile"><!-- mobile-menu -->
         <div class="site-branding-mobile">
-	    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+	    <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php wp_title(''); ?>">
                 <?php get_template_part( 'design/svg', 'logo-white' ); ?>
             </a></p>
         </div>
@@ -45,7 +45,9 @@
         $title = '';
         if (!is_front_page()) {
             if (is_archive()) {
-                $title =  __(explode(' ', get_the_archive_title())[1], 'rebeldes');
+              //$title =  __(explode(' ', get_the_archive_title())[1], 'rebeldes');
+                
+                $title = __('Artists', 'rebeldes');
             } else {
                 $title = single_post_title('', false);
 
@@ -61,7 +63,7 @@
         ?>
 
         <div class="mobile-navbar-title"><?php echo $title; ?></div>
-        <button id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+        <button id="menu-toggle" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Menu toggle">
             <span class="menu-toggle--open">
                 <svg width="61" height="41" viewBox="0 0 61 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.16667 40.25H56.8333C58.6438 40.25 60.125 38.7687 60.125 36.9583C60.125 35.1479 58.6438 33.6667 56.8333 33.6667H4.16667C2.35625 33.6667 0.875 35.1479 0.875 36.9583C0.875 38.7687 2.35625 40.25 4.16667 40.25ZM4.16667 23.7917H56.8333C58.6438 23.7917 60.125 22.3104 60.125 20.5C60.125 18.6896 58.6438 17.2083 56.8333 17.2083H4.16667C2.35625 17.2083 0.875 18.6896 0.875 20.5C0.875 22.3104 2.35625 23.7917 4.16667 23.7917ZM0.875 4.04167C0.875 5.85208 2.35625 7.33333 4.16667 7.33333H56.8333C58.6438 7.33333 60.125 5.85208 60.125 4.04167C60.125 2.23125 58.6438 0.75 56.8333 0.75H4.16667C2.35625 0.75 0.875 2.23125 0.875 4.04167Z" fill="white"/>

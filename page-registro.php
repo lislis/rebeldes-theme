@@ -266,8 +266,7 @@
         &.pull-2 {
           transform: translateX(-244px);
         }
-      }
-    }
+          }
   }
 
 }
@@ -292,7 +291,8 @@ get_header();
 
                 <div class="entry-content">
                     <?php
-                    the_content();
+
+    the_content();
                     ?>
                 </div><!-- .entry-content -->
 

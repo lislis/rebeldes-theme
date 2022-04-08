@@ -29,10 +29,20 @@
     padding: 0 0 var(--s-20);
     color: var(--black);
     text-decoration: none;
+    img {
+      transform-origin: center;
+      transition: transform 200ms ease-in-out;
+    }
+    &:hover,
+    &:active {
+      img {
+        transform: scale(1.2) !important; // the joke is the extra scale comes from the js parallax
+      }
+
+    }
   }
 
   .entry-header {
-    //transform: translateY(-0.4em);
     padding: 0 var(--s-10);
     position: relative;
     z-index: 7;
@@ -49,28 +59,7 @@
     z-index: 6;
     max-height: 350px;
     filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.25));
-    img {
-      height: 350px;
-      width: initial;
-      max-width: initial;
-    }
   }
-  // .entry-image {
-  //   height: 50vw;
-  //   background-size: cover;
-  //   background-position: center;
-  //   transform: scale(1.1) translate3d(0, 0em, 0);
-  //   animation: jumpy 2s ease-in-out infinite;
-  //   animation-play-state: paused;
-  //   animation-direction: alternate;
-  // }
-
-  // a:hover,
-  // a:active {
-  //   .entry-image .entry-image-canvas {
-  //     animation-play-state: running;
-  //   }
-  // }
 
   @media screen and (min-width: $bp-s) {
     grid-template-columns: repeat(4, calc(25% - ((var(--s-20) * 3) / 4)));
@@ -101,8 +90,8 @@
 
 .artists-overview {
   color: var(--purple2);
-  margin: var(--s-40) 0 var(--s-90);
-  padding: var(--s-20) 0 calc(var(--s-20) + var(--s-10));
+  margin: var(--s-40) 0 var(--s-60);
+  padding: var(--s-20) 0 var(--s-20);
   border-top: dashed 2px currentColor;
   border-bottom: dashed 2px currentColor;
 
@@ -116,27 +105,23 @@
     display: inline;
     font-size: var(--h-s);
     font-weight: 500;
-
+    &:not(:last-of-type):after {
+      content: "*";
+      display: inline-block;
+      margin: 0 0.2em 0 0.3em;
+    }
   }
   a {
     color: var(--purple2);
     text-decoration: none;
-
-  }
-
-  .artists-overview-sep {
-    margin: 0 0.3em;
-
-  }
-  li:last-of-type {
-    .artists-overview-sep {
-      display: none;
+    &:hover,
+    &:active {
+      text-decoration: underline;
     }
-
   }
 
   @media screen and (min-width: $bp-s) {
-    margin: var(--s-60) 0 var(--s-115);
+    margin: var(--s-60) 0 var(--s-60);
     padding: var(--s-40) 0 var(--s-40);
     li {
       font-size: var(--h-2m);
@@ -155,7 +140,7 @@
 
 .site-single-artist {
   .entry-title {
-    font-size: var(--h-l);
+    font-size: var(--h-xl);
     margin: 0;
     background: var(--gradient5);
     background-clip: text;
@@ -164,7 +149,7 @@
     line-height: 1;
   }
   h2, h3 {
-    font-size: var(--h-l);
+    font-size: var(--h-2m);
     text-transform: initial;
   }
   .entry-content {
@@ -187,16 +172,9 @@
       width: 75% !important;
     }
   }
-
-  .wp-block-image,
-  .wp-block-embed {
-    img,
-    iframe {
-      filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.25));
-    }
-
+  figure figure + figcaption {
+    margin-top: 0 !important;
   }
-
   .layout-inner {
     display: grid;
     grid-template-columns: repeat(6, calc(100% / 6));
@@ -208,9 +186,14 @@
       grid-row: 1;
       filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.25));
       overflow: hidden;
-      @media screen and (max-width: $bp-s) {
+
+      img {
         height: 330px;
+        width: auto;
+        //object-fit: cover;
       }
+
+
       figcaption {
         display: none;
       }
@@ -218,7 +201,7 @@
     .entry-header {
       grid-column: 2 / span 5;
       grid-row: 2;
-      transform: translateY(-0.35em);
+      transform: translateY(-0.5em);
       position: relative;
       z-index: 2;
     }
@@ -264,7 +247,7 @@
       margin-top: -5em;
 
       .entry-header {
-        grid-column: 9 / span 11;
+        grid-column: 9 / span 14;
         grid-row: 2;
         transform: translateY(0);
       }
@@ -272,6 +255,13 @@
       .entry-image {
         grid-column: 3 / span 8;
         grid-row: 1 / span 4;
+
+        img {
+          min-height: 330px;
+          height: auto;
+          object-fit: cover;
+        }
+
 
         figcaption {
           display: block;
@@ -311,6 +301,12 @@
       }
       h2, h3 {
         font-size: var(--h-l);
+      }
+    }
+    @media screen and (min-width: $bp-l) {
+      .entry-header {
+        grid-column: 9 / span 10;
+
       }
     }
   }

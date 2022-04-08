@@ -5,7 +5,7 @@
                 'theme_location' => 'menu-4',
                 'menu_class' => '',
                 'container_class' => 'layout-inner',
-                'link_after' => '<span class="artists-overview-sep"> *</span>',
+                //'after' => '<span class="artists-overview-sep"> *</span>',
             )
         );
         ?>

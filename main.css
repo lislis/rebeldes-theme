@@ -888,6 +888,11 @@ input[type="submit"]:active,
 	background-image: url(/wp-content/themes/rebeldes/assets/icons/download-white.svg);
 }
 
+.wp-block-image,
+.wp-block-embed {
+	filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.25));
+}
+
 .layout-inner {
 	max-width: 1512px;
 	margin: auto;
@@ -976,7 +981,7 @@ input[type="submit"]:active,
 	right: 0;
 	bottom: 0;
 	z-index: 89;
-	transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 120%, 0);
 	transition: transform 200ms cubic-bezier(0.03, 0.34, 0.23, -0.22);
 }
 
@@ -1133,6 +1138,7 @@ input[type="submit"]:active,
 	bottom: 0;
 	right: 0;
 	left: 0;
+	width: 100vw;
 	z-index: 90;
 	padding: 0 0 0 var(--s-10);
 	background-color: var(--purple2);
@@ -1253,6 +1259,7 @@ input[type="submit"]:active,
 
 .site-footer {
 	padding-top: var(--s-60);
+	margin-top: var(--s-60);
 	padding-bottom: var(--s-115);
 	color: var(--white);
 	background: var(--gradient2);
@@ -1555,6 +1562,7 @@ input[type="submit"]:active,
 	order: 1;
 	z-index: 1;
 	overflow: hidden;
+	filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.25));
 }
 
 .site-page .rebeldes_curators .entry-header {
@@ -1569,7 +1577,7 @@ input[type="submit"]:active,
 }
 
 .site-page .rebeldes_curators .entry-subtitle {
-	font-size: var(--h-l);
+	font-size: var(--h-2m);
 	font-weight: 500;
 }
 
@@ -1812,6 +1820,16 @@ input[type="submit"]:active,
 	text-decoration: none;
 }
 
+.artists-list .type-rebeldes_artists a img {
+	transform-origin: center;
+	transition: transform 200ms ease-in-out;
+}
+
+.artists-list .type-rebeldes_artists a:hover img,
+.artists-list .type-rebeldes_artists a:active img {
+	transform: scale(1.2) !important;
+}
+
 .artists-list .entry-header {
 	padding: 0 var(--s-10);
 	position: relative;
@@ -1829,12 +1847,6 @@ input[type="submit"]:active,
 	z-index: 6;
 	max-height: 350px;
 	filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.25));
-}
-
-.artists-list .entry-image img {
-	height: 350px;
-	width: initial;
-	max-width: initial;
 }
 
 @media screen and (min-width: 760px) {
@@ -1877,8 +1889,8 @@ input[type="submit"]:active,
 
 .artists-overview {
 	color: var(--purple2);
-	margin: var(--s-40) 0 var(--s-90);
-	padding: var(--s-20) 0 calc(var(--s-20) + var(--s-10));
+	margin: var(--s-40) 0 var(--s-60);
+	padding: var(--s-20) 0 var(--s-20);
 	border-top: dashed 2px currentColor;
 	border-bottom: dashed 2px currentColor;
 }
@@ -1896,23 +1908,26 @@ input[type="submit"]:active,
 	font-weight: 500;
 }
 
+.artists-overview li:not(:last-of-type)::after {
+	content: "*";
+	display: inline-block;
+	margin: 0 0.2em 0 0.3em;
+}
+
 .artists-overview a {
 	color: var(--purple2);
 	text-decoration: none;
 }
 
-.artists-overview .artists-overview-sep {
-	margin: 0 0.3em;
-}
-
-.artists-overview li:last-of-type .artists-overview-sep {
-	display: none;
+.artists-overview a:hover,
+.artists-overview a:active {
+	text-decoration: underline;
 }
 
 @media screen and (min-width: 760px) {
 
 	.artists-overview {
-		margin: var(--s-60) 0 var(--s-115);
+		margin: var(--s-60) 0 var(--s-60);
 		padding: var(--s-40) 0 var(--s-40);
 	}
 
@@ -1931,7 +1946,7 @@ input[type="submit"]:active,
 }
 
 .site-single-artist .entry-title {
-	font-size: var(--h-l);
+	font-size: var(--h-xl);
 	margin: 0;
 	background: var(--gradient5);
 	background-clip: text;
@@ -1942,7 +1957,7 @@ input[type="submit"]:active,
 
 .site-single-artist h2,
 .site-single-artist h3 {
-	font-size: var(--h-l);
+	font-size: var(--h-2m);
 	text-transform: initial;
 }
 
@@ -1971,11 +1986,8 @@ input[type="submit"]:active,
 	}
 }
 
-.site-single-artist .wp-block-image img,
-.site-single-artist .wp-block-image iframe,
-.site-single-artist .wp-block-embed img,
-.site-single-artist .wp-block-embed iframe {
-	filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.25));
+.site-single-artist figure figure + figcaption {
+	margin-top: 0 !important;
 }
 
 .site-single-artist .layout-inner {
@@ -1992,11 +2004,9 @@ input[type="submit"]:active,
 	overflow: hidden;
 }
 
-@media screen and (max-width: 760px) {
-
-	.site-single-artist .layout-inner .entry-image {
-		height: 330px;
-	}
+.site-single-artist .layout-inner .entry-image img {
+	height: 330px;
+	width: auto;
 }
 
 .site-single-artist .layout-inner .entry-image figcaption {
@@ -2006,7 +2016,7 @@ input[type="submit"]:active,
 .site-single-artist .layout-inner .entry-header {
 	grid-column: 2 / span 5;
 	grid-row: 2;
-	transform: translateY(-0.35em);
+	transform: translateY(-0.5em);
 	position: relative;
 	z-index: 2;
 }
@@ -2061,7 +2071,7 @@ input[type="submit"]:active,
 	}
 
 	.site-single-artist .layout-inner .entry-header {
-		grid-column: 9 / span 11;
+		grid-column: 9 / span 14;
 		grid-row: 2;
 		transform: translateY(0);
 	}
@@ -2069,6 +2079,12 @@ input[type="submit"]:active,
 	.site-single-artist .layout-inner .entry-image {
 		grid-column: 3 / span 8;
 		grid-row: 1 / span 4;
+	}
+
+	.site-single-artist .layout-inner .entry-image img {
+		min-height: 330px;
+		height: auto;
+		object-fit: cover;
 	}
 
 	.site-single-artist .layout-inner .entry-image figcaption {
@@ -2115,6 +2131,13 @@ input[type="submit"]:active,
 	}
 }
 
+@media screen and (min-width: 1512px) {
+
+	.site-single-artist .layout-inner .entry-header {
+		grid-column: 9 / span 10;
+	}
+}
+
 @keyframes jumpy {
 
 	0% {
@@ -2136,10 +2159,21 @@ input[type="submit"]:active,
 	width: 100vw;
 	z-index: 9;
 	padding: 0;
+	height: 100vh;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .hero figcaption {
 	margin-top: var(--s-10);
+}
+
+@media screen and (min-width: 1024px) {
+
+	.hero {
+		height: 85vh;
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -2153,21 +2187,6 @@ input[type="submit"]:active,
 
 	.hero figcaption {
 		padding-left: 368px;
-	}
-}
-
-.hero-cover {
-	height: 100vh;
-	margin: 0 -0.5rem;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-@media screen and (min-width: 1024px) {
-
-	.hero-cover {
-		height: 85vh;
 	}
 }
 
@@ -2231,21 +2250,6 @@ input[type="submit"]:active,
 	}
 }
 
-.site-frontpage .artists-overview {
-	margin-bottom: var(--s-40);
-}
-
-.site-frontpage .front-footer {
-	margin-bottom: var(--s-40);
-}
-
-@media screen and (min-width: 1024px) {
-
-	.site-frontpage .front-footer {
-		margin-bottom: var(--s-90);
-	}
-}
-
 @media screen and (min-width: 1024px) {
 
 	.site-frontpage .front-gallery {
@@ -2280,10 +2284,16 @@ input[type="submit"]:active,
 @media screen and (min-width: 1024px) {
 
 	.hero-logo {
-		width: 550px;
-		height: 550px;
-		top: 9vh;
+		width: 50vw;
+		height: 50vw;
+		max-width: 550px;
+		max-height: 550px;
+		top: 10vh;
 	}
+}
+
+.hero-logo h1 {
+	margin: 0;
 }
 
 .hero-logo svg {

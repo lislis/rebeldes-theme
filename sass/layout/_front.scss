@@ -7,6 +7,14 @@
   figcaption {
     margin-top: var(--s-10);
   }
+  height: 100vh;
+  //margin: 0 -0.5rem;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media screen and (min-width: $bp-m) {
+    height:  85vh;
+  }
 
   @media screen and (min-width: $bp-m) {
     figcaption {
@@ -17,17 +25,6 @@
     figcaption {
       padding-left: 368px;
     }
-  }
-}
-
-.hero-cover {
-  height: 100vh;
-  margin: 0 -0.5rem;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  @media screen and (min-width: $bp-m) {
-    height:  85vh;
   }
 }
 
@@ -71,15 +68,6 @@
     }
   }
 
-  .artists-overview {
-    margin-bottom: var(--s-40);
-  }
-  .front-footer {
-    margin-bottom: var(--s-40);
-    @media screen and (min-width: $bp-m) {
-      margin-bottom: var(--s-90);
-    }
-  }
   .front-gallery {
     @media screen and (min-width: $bp-m) {
       margin-left: calc(100% / 8 * -1);
@@ -110,9 +98,14 @@
   mix-blend-mode: multiply;
 
   @media screen and (min-width: $bp-m) {
-    width: 550px;
-    height: 550px;
-    top: 9vh;
+    width: 50vw;
+    height: 50vw;
+    max-width: 550px;
+    max-height: 550px;
+    top: 10vh;
+  }
+  h1 {
+    margin: 0;
   }
 
   svg {
